@@ -23,8 +23,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
-	implementation "org.springframework.social:spring-social-facebook"
-	implementation "org.springframework.social:spring-social-twitter"
 	implementation "org.springframework.boot:spring-boot-starter-data-jpa"
 
 	testImplementation "org.springframework.boot:spring-boot-starter-test"
@@ -35,6 +33,14 @@ dependencies {
 	// https://projectlombok.org
 	compileOnly 'org.projectlombok:lombok:1.18.4'
 	annotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
+	compile group: 'org.hibernate', name: 'hibernate-validator', version: '4.2.0.Final'
+
+	// https://mvnrepository.com/artifact/javax.validation/validation-api
+	compile group: 'javax.validation', name: 'validation-api', version: '2.0.0.Final'
+
+
 }
 
 test {
