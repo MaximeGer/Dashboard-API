@@ -1,7 +1,7 @@
-package com.epitech.login.service;
+package com.epitech.dashboard.service;
 
-import com.epitech.login.model.Role;
-import com.epitech.login.model.User;
+import com.epitech.dashboard.model.Role;
+import com.epitech.dashboard.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,4 +1,4 @@
-package com.epitech.login.model;
+package com.epitech.dashboard.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,6 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data

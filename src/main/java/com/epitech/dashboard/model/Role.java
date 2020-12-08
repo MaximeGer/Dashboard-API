@@ -1,4 +1,4 @@
-package com.epitech.login.model;
+package com.epitech.dashboard.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

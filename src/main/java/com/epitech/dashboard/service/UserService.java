@@ -1,9 +1,9 @@
-package com.epitech.login.service;
+package com.epitech.dashboard.service;
 
-import com.epitech.login.model.Role;
-import com.epitech.login.model.User;
-import com.epitech.login.repository.RoleRepository;
-import com.epitech.login.repository.UserRepository;
+import com.epitech.dashboard.model.Role;
+import com.epitech.dashboard.model.User;
+import com.epitech.dashboard.repository.RoleRepository;
+import com.epitech.dashboard.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

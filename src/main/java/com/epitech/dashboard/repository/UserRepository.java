@@ -1,6 +1,6 @@
-package com.epitech.login.repository;
+package com.epitech.dashboard.repository;
 
-import com.epitech.login.model.User;
+import com.epitech.dashboard.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

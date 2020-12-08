@@ -1,4 +1,4 @@
-package com.epitech.login;
+package com.epitech.dashboard;
 
 
 import org.springframework.boot.SpringApplication;

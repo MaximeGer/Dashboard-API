@@ -1,9 +1,9 @@
-package com.epitech.login.controller;
+package com.epitech.dashboard.controller;
 
 import javax.validation.Valid;
 
-import com.epitech.login.model.User;
-import com.epitech.login.service.UserService;
+import com.epitech.dashboard.model.User;
+import com.epitech.dashboard.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
