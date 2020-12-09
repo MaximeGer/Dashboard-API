@@ -24,12 +24,30 @@
                     <span th:utext="${userName}"></span>
                 </div>
                 <div class="panel-body">
-                    
+                    <!-- <input >
+                    <button class="button">click to see weather</button> -->
+
+
+
+
+
+
                 </div>
                 <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
             </div>
         </div>
     
     </div>
+    <!-- <script>
+        $("button").click(function(){
+            $.ajax({
+                url: "api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid={API key}",
+
+                success: function(result){
+                    $("#widgetWeather").html(result);
+                }
+            });
+        });
+    </script> -->
 </body>
 </html>
