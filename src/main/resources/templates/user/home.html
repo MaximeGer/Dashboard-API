@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
     <title>Home</title>
 </head>
 <body>
@@ -47,7 +48,12 @@
                     </div>
                     <div id="steam" class="tab-pane fade">
                         <h3>Steam</h3>
-
+                        <select name="selectGame" id="selectGame">
+                            <option value="1091500" selected>Cyberpunk 2077</option>
+                            <option value="945360">Among Us</option>
+                        </select>
+                        <button id=getNews>Get the news of the game you selected</button>
+                        <div id=widgetSteamNews></div>
 
                     </div>
                     </div>
@@ -57,14 +63,36 @@
         </div>
     
     </div>
+  
     <script>
-        $("button").click(function(){
+        $("#getNews").click(function(){
             $.ajax({
-                url: "api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid={API key}",
+                url: "/api/game/" + $("#selectGame").val(),
+                url: "http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?key=677DFBDBD45B7DCF500D1A3D0EAE0A62&format=JSON&appid="+$("#selectGame").val(),
+                method: 'GET',
+                dataType: 'xml',
+                cors: true ,
+                contentType:'application/json',
+                secure: true,
+                // headers: {
+                //     "Content-Type" : "application/json",
 
+                //     "Accept" : "application/json",
+
+                //     "Access-Control-Allow-Origin":"*",
+
+                //     "Access-Control-Allow-Headers":"Origin, X-Requested-With, Content-Type, Accept"
+                // },
+           
                 success: function(result){
-                    $("#widgetWeather").html(result);
+                    $("#widgetSteamNews").html(result);
+                    console.log($("#selectGame").val());
+                },
+                error: function(error){
+                    console.log("error");
+                    console.log(error.HEADERS_RECEIVED)
                 }
+
             });
         });
     </script>
