@@ -10,67 +10,76 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="container">
+<div class="container">
 
-        <form th:action="@{/logout}" method="get">
-            <button class="btn btn-md btn-danger btn-block" name="registration"
-                    type="Submit">Logout
-            </button>
-        </form>
-    
-        <div class="panel-group" style="margin-top:40px">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <span th:utext="${userName}"></span>
-                </div>
-                <div class="panel-body">
-                    <!-- <input >
-                    <button class="button">click to see weather</button> -->
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                        <li><a data-toggle="tab" href="#service1">Service 1</a></li>
-                        <li><a data-toggle="tab" href="#service2">Service 2</a></li>
-                        <li><a data-toggle="tab" href="#service3">Service 3</a></li>
-                      </ul>
-                    
-                      <div class="tab-content">
-                        <div id="home" class="tab-pane fade in active">
-                          <h3>Veuillez choisir un service</h3>
-                        </div>
-                        <div id="service1" class="tab-pane fade">
-                          <h3>Service 1</h3>
-                          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div id="service2" class="tab-pane fade">
-                          <h3>Service 2</h3>
-                          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                        </div>
-                        <div id="service3" class="tab-pane fade">
-                          <h3>Service 3</h3>
-                          <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        </div>
-                      </div>
+    <form th:action="@{/logout}" method="get">
+        <button class="btn btn-md btn-danger btn-block" name="registration"
+                type="Submit">Logout
+        </button>
+    </form>
 
-
-
-
-
-                </div>
-                <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+    <div class="panel-group" style="margin-top:40px">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span th:utext="${userName}"></span>
             </div>
-        </div>
-    
-    </div>
-    <!-- <script>
-        $("button").click(function(){
-            $.ajax({
-                url: "api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid={API key}",
+            <div class="panel-body">
+                <!-- <input >
+                <button class="button">click to see weather</button> -->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                    <li><a data-toggle="tab" href="#service1">Service 1</a></li>
+                    <li><a data-toggle="tab" href="#service2">Service 2</a></li>
+                    <li><a data-toggle="tab" href="#service3">Service 3</a></li>
+                </ul>
 
-                success: function(result){
-                    $("#widgetWeather").html(result);
-                }
-            });
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>Veuillez choisir un service</h3>
+                    </div>
+                    <div id="service1" class="tab-pane fade">
+                        <h3>Service 1</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                    </div>
+                    <div id="service2" class="tab-pane fade">
+                        <h3>Youtube</h3>
+                        <form action="/channel" id="channelSelection" method="GET">
+
+                            <label for="channel">Choose a channel:</label>
+                            <select name="channel" id="channel" form="channelSelection">
+                                <option value="all">All</option>
+                            </select>
+                            <input class="button" type="submit" value="TEST">
+
+                        </form>
+
+
+                    </div>
+                    <div id="service3" class="tab-pane fade">
+                        <h3>Service 3</h3>
+                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                            explicabo.</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+        </div>
+    </div>
+
+</div>
+<!-- <script>
+    $("button").click(function(){
+        $.ajax({
+            url: "api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid={API key}",
+
+            success: function(result){
+                $("#widgetWeather").html(result);
+            }
         });
-    </script> -->
+    });
+</script> -->
 </body>
 </html>
