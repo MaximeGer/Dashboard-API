@@ -72,10 +72,12 @@
                 contentType:'application/json',
                 success: function(result){
                     $("#widgetSteamNews").html(result);
-                    console.log(result);
+                    
+                    newsitems = result["appnews"]["newsitems"];
+                    length = newsitems.length;
                     $("#widgetSteamNews").html("");
-                    for (var i=0; i<5; i++) {
-                        $("#widgetSteamNews").append("<div id='steamNews'>"+ result["appnews"]["newsitems"][i]["contents"]+"</div>");
+                    for (var i=1; i<=5; i++) {
+                        $("#widgetSteamNews").append("<div id='steamNews'>"+ newsitems[length-i]["contents"]+"</div>");
                     }
 
                 },
