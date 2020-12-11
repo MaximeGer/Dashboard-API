@@ -84,6 +84,22 @@ public class User {
         this.password = password;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public void setActive(Boolean active) {
         this.active = active;
     }
