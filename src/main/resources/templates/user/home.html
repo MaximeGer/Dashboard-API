@@ -73,7 +73,10 @@
                 success: function(result){
                     $("#widgetSteamNews").html(result);
                     console.log(result);
-                 
+                    $("#widgetSteamNews").html("");
+                    for (var i=0; i<5; i++) {
+                        $("#widgetSteamNews").append("<div id='steamNews'>"+ result["appnews"]["newsitems"][i]["contents"]+"</div>");
+                    }
 
                 },
                 error: function(error){
