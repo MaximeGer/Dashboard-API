@@ -7,43 +7,43 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
+
     <title>Home</title>
 </head>
 <body>
 <div class="container">
 
-        <form th:action="@{/logout}" method="get">
-            <button class="btn btn-md btn-danger btn-block" name="registration"
-                    type="Submit">Logout
-            </button>
-        </form>
-    
-        <div class="panel-group" style="margin-top:40px">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <span th:utext="${userName}"></span>
-                </div>
-                <div class="panel-body">
-                    <!-- <input >
-                    <button class="button">click to see weather</button> -->
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                        <li><a data-toggle="tab" href="#service1">Service 1</a></li>
-                        <li><a data-toggle="tab" href="#service2">Service 2</a></li>
-                        <li><a data-toggle="tab" href="#steam">Steam</a></li>
-                    </ul>
-					<div class="tab-content">
+    <form th:action="@{/logout}" method="get">
+        <button class="btn btn-md btn-danger btn-block" name="registration"
+                type="Submit">Logout
+        </button>
+    </form>
+
+    <div class="panel-group" style="margin-top:40px">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span th:utext="${userName}"></span>
+            </div>
+            <div class="panel-body">
+                <!-- <input >
+                <button class="button">click to see weather</button> -->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                    <li><a data-toggle="tab" href="#service1">Service 1</a></li>
+                    <li><a data-toggle="tab" href="#service2">Service 2</a></li>
+                    <li><a data-toggle="tab" href="#steam">Steam</a></li>
+                </ul>
+                <div class="tab-content">
                     <div id="home" class="tab-pane fade in active">
                         <h3>Veuillez choisir un service</h3>
                     </div>
                     <div id="service1" class="tab-pane fade">
                         <h3>Service 1</h3>
-                        
+
                     </div>
                     <div id="service2" class="tab-pane fade">
                         <h3>Youtube</h3>
-                        <form action="/channel" id="channelSelection" method="GET">
+                        <form action="/api/youtube/getMostPopular" id="channelSelection" method="GET">
 
                             <label for="channel">Choose a channel:</label>
                             <select name="channel" id="channel" form="channelSelection">
@@ -68,21 +68,11 @@
 
                     </div>
                 </div>
-                    
-    <form th:action="@{/logout}" method="get">
-        <button class="btn btn-md btn-danger btn-block" name="registration"
-                type="Submit">Logout
-        </button>
-    </form>
-
-                
-
-
             </div>
             <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
         </div>
     </div>
-  
+
     <script>
         $("#getNews").click(function(){
             $.ajax({
@@ -107,6 +97,7 @@
                 }
             });
         });
+
     </script>
 </div>
 </body>
