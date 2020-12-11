@@ -6,20 +6,19 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SteamController {
 
-    @RequestMapping(value="/user/home", method = RequestMethod.GET)
-    public ModelAndView login(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("auth/login");
-        return modelAndView;
-    }
-
-    public String getGame(String id) throws IOException, InterruptedException {
+    @RequestMapping(value = "/api/steam/getNews/{id}", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getSteamGameNews(@PathVariable("id") long id) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?key=677DFBDBD45B7DCF500D1A3D0EAE0A62&format=JSON&appid="+id))
@@ -30,6 +29,7 @@ public class SteamController {
 
         return response.body();
     }
+
 
   
 }

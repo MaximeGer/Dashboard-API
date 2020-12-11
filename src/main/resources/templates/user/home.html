@@ -67,32 +67,19 @@
     <script>
         $("#getNews").click(function(){
             $.ajax({
-                url: "/api/game/" + $("#selectGame").val(),
-                url: "http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?key=677DFBDBD45B7DCF500D1A3D0EAE0A62&format=JSON&appid="+$("#selectGame").val(),
-                method: 'GET',
-                dataType: 'xml',
-                cors: true ,
+                url: "/api/steam/getNews/" + $("#selectGame").val(),
+                method: 'GET',        
                 contentType:'application/json',
-                secure: true,
-                // headers: {
-                //     "Content-Type" : "application/json",
-
-                //     "Accept" : "application/json",
-
-                //     "Access-Control-Allow-Origin":"*",
-
-                //     "Access-Control-Allow-Headers":"Origin, X-Requested-With, Content-Type, Accept"
-                // },
-           
                 success: function(result){
                     $("#widgetSteamNews").html(result);
-                    console.log($("#selectGame").val());
+                    console.log(result);
+                 
+
                 },
                 error: function(error){
                     console.log("error");
                     console.log(error.HEADERS_RECEIVED)
                 }
-
             });
         });
     </script>
