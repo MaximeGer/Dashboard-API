@@ -30,8 +30,8 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
                     <li><a data-toggle="tab" href="#service1">Service 1</a></li>
-                    <li><a data-toggle="tab" href="#service2">Service 2</a></li>
-                    <li><a data-toggle="tab" href="#steam">Steam</a></li>
+                    <li><a data-toggle="tab" href="#youtubePanel">Youtube</a></li>
+                    <li><a data-toggle="tab" href="#steamPanel">Steam</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="home" class="tab-pane fade in active">
@@ -41,21 +41,21 @@
                         <h3>Service 1</h3>
 
                     </div>
-                    <div id="service2" class="tab-pane fade">
+
+                    <div id="youtubePanel" class="tab-pane fade input-group mb-3">
                         <h3>Youtube</h3>
-                        <form action="/api/youtube/getMostPopular" id="channelSelection" method="GET">
+                        <select name="selectVideo" id="selectedVideo" class="custom-select">
+                            <option value="Trz0r-0ULtw" selected>Painting tutorial - Aeolian</option>
+                            <option value="945360">Among Us</option>
+                            <option value="391540 ">Undertale</option>
+                            <option value="400">Portal</option>
+                        </select>
+                        <button id=getVideo class="btn">Get the infos of the video you selected</button>
 
-                            <label for="channel">Choose a channel:</label>
-                            <select name="channel" id="channel" form="channelSelection">
-                                <option value="all">All</option>
-                            </select>
-                            <input class="button" type="submit" value="TEST">
-
-                        </form>
-
-
+                        <div id=widgetVideoInfos></div>
                     </div>
-                    <div id="steam" class="tab-pane fade input-group mb-3">
+
+                    <div id="steamPanel" class="tab-pane fade input-group mb-3">
                         <h3>Steam</h3>
                         <select name="selectGame" id="selectGame" class="custom-select">
                             <option value="1091500" selected>Cyberpunk 2077</option>
@@ -65,14 +65,15 @@
                         </select>
                         <button id=getNews class="btn">Get the news of the game you selected</button>
                         <div id=widgetSteamNews></div>
-
                     </div>
                 </div>
             </div>
             <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
         </div>
     </div>
-    <script type="text/javascript" th:src="@{/js/scripts/ajaxSteamGetNews.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/steam/ajaxSteamGetNews.js}"></script>
+    <script type="text/javascript" th:src="@{/js/youtube/getVideoInfo.js}"></script>
 </div>
 </body>
 </html>
