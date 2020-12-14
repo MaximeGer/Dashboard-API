@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="file//:/src/main/resources/templates/scripts/ajaxSteamGetNews.js"></script>
    
     <title>Home</title>
 </head>
@@ -25,8 +26,6 @@
                     <span th:utext="${userName}"></span>
                 </div>
                 <div class="panel-body">
-                    <!-- <input >
-                    <button class="button">click to see weather</button> -->
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
                         <li><a data-toggle="tab" href="#service1">Service 1</a></li>
@@ -51,7 +50,7 @@
                         <select name="selectGame" id="selectGame" class="custom-select">
                             <option value="1091500" selected>Cyberpunk 2077</option>
                             <option value="945360">Among Us</option>
-                            <option value="391540 ">Undertale</option>
+                            <option value="391540">Undertale</option>
                             <option value="400">Portal</option>
                         </select>
                         <button id=getNews class="btn">Get the news of the game you selected</button>
@@ -63,33 +62,7 @@
                 <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
             </div>
         </div>
-    
-    </div>
-  
-    <script>
-        $("#getNews").click(function(){
-            $.ajax({
-                url: "/api/steam/getNews/" + $("#selectGame").val(),
-                method: 'GET',        
-                contentType:'application/json',
-                success: function(result){
-                    $("#widgetSteamNews").html(result);
-                    
-                    newsitems = result["appnews"]["newsitems"];
-                    length = newsitems.length;
-                    $("#widgetSteamNews").html("");
-                    for (var i=1; i<=5; i++) {
-                        $("#widgetSteamNews").append("<div id='steamNews'>"+ newsitems[length-i]["contents"]+"</div><hr>");
-                    }
-                    $("#widgetSteamNews").find("img").attr("class","img-fluid img-thumbnail");  
 
-                },
-                error: function(error){
-                    console.log("error");
-                    console.log(error.HEADERS_RECEIVED)
-                }
-            });
-        });
-    </script>
+    </div>
 </body>
 </html>
