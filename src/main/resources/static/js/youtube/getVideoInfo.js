@@ -6,10 +6,13 @@ $("#getVideo").click(function(){
         success: function(result){
             video = result.items[0];
             $("#widgetVideoInfos").html("");
-            $("#widgetVideoInfos").append(video.snippet.title);
-            $("#widgetVideoInfos").append(video.snippet.description);
-            $("#widgetVideoInfos").append(video.snippet.channelTitle);
+            $("#widgetVideoInfos").append("<div id='youtubeVideo'>");
+            $("#widgetVideoInfos").append("<h1 id='Title'>"+video.snippet.title +"</h1>");
+            $("#widgetVideoInfos").append("<br><h5>"+video.snippet.channelTitle+"</h5><hr>");
 
+            $("#widgetVideoInfos").append("<img id='imgVideo' width="+video.snippet.thumbnails.high.width + " height="+video.snippet.thumbnails.high.height + " src=" + video.snippet.thumbnails.high.url + "></div>");
+            $("#widgetVideoInfos").append("<br><a href=https://youtu.be/"+$("#selectedVideo").val()+">Link</a>");
+            $("#widgetVideoInfos").append("<br><br><p>Description :<br><br>"+video.snippet.description+"</p></div>");
 
         },
         error: function(error){

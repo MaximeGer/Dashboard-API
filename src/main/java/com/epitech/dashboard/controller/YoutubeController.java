@@ -15,18 +15,28 @@ import java.net.http.HttpResponse;
 
 @Controller
 public class YoutubeController {
-    @RequestMapping(value = "/api/youtube/getVideo/{id}", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/api/youtube/getVideo/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getVideo(@PathVariable("id") String id) throws IOException, InterruptedException {
-        System.out.println(id);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&q=https://youtu.be/"+id))
+                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/videos/?part=snippet&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&id=" + id))
                 .build();
-
         HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
 
+
+    @RequestMapping(value = "/api/youtube/searchVideo/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String searchVideo(@PathVariable("id") String id) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&q=https://youtu.be/" + id))
+                .build();
+        HttpResponse<String> response = client.send(request,
+                HttpResponse.BodyHandlers.ofString());
         return response.body();
     }
 }
