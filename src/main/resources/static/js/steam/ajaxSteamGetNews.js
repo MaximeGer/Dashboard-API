@@ -9,7 +9,7 @@ $("#getNews").click(function(){
             length = newsitems.length;
             $("#widgetSteamNews").html("");
             for (var i=1; i<=5; i++) {
-                $("#widgetSteamNews").append("<div id='steamNews'>"+ newsitems[length-i]["contents"]+"</div><hr>");
+                $("#widgetSteamNews").append("<div class='steamNews'>"+ newsitems[length-i]["contents"]+"</div><hr>");
             }
             $("#widgetSteamNews").find("img").attr("class","img-fluid img-thumbnail")
         },
