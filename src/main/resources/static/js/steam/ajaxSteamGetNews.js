@@ -14,8 +14,8 @@ $("#getNews").click(function(){
             $("#widgetSteamNews").find("img").attr("class","img-fluid img-thumbnail")
         },
         error: function(error){
-            console.log("error");
-            console.log(error.HEADERS_RECEIVED)
+            console.error("Error : " +error.responseJSON.error + ", status : "+ error.responseJSON.status)
+            console.error("Message : " +error.responseJSON.message)
         }
     });
 });
