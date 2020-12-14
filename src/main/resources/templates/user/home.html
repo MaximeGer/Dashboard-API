@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="file//:/src/main/resources/templates/scripts/ajaxSteamGetNews.js"></script>
-   
     <title>Home</title>
 </head>
 <body>
-    <div class="container">
+<div class="container">
 
         <form th:action="@{/logout}" method="get">
             <button class="btn btn-md btn-danger btn-block" name="registration"
@@ -34,16 +32,27 @@
                     </ul>
                     
                     <div class="tab-content">
+
                     <div id="home" class="tab-pane fade in active">
                         <h3>Veuillez choisir un service</h3>
                     </div>
                     <div id="service1" class="tab-pane fade">
                         <h3>Service 1</h3>
-                        
+
                     </div>
                     <div id="service2" class="tab-pane fade">
-                        <h3>Service 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                        <h3>Youtube</h3>
+                        <form action="/api/youtube/getMostPopular" id="channelSelection" method="GET">
+
+                            <label for="channel">Choose a channel:</label>
+                            <select name="channel" id="channel" form="channelSelection">
+                                <option value="all">All</option>
+                            </select>
+                            <input class="button" type="submit" value="TEST">
+
+                        </form>
+
+
                     </div>
                     <div id="steam" class="tab-pane fade input-group mb-3">
                         <h3>Steam</h3>
@@ -57,12 +66,12 @@
                         <div id=widgetSteamNews></div>
 
                     </div>
-                    </div>
                 </div>
-                <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
             </div>
+            <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
         </div>
-
     </div>
+    <script type="text/javascript" th:src="@{/js/scripts/ajaxSteamGetNews.js}"></script>
+</div>
 </body>
 </html>

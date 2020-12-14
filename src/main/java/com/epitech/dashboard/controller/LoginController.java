@@ -1,7 +1,5 @@
 package com.epitech.dashboard.controller;
 
-import javax.validation.Valid;
-
 import com.epitech.dashboard.model.User;
 import com.epitech.dashboard.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
 
 @Controller
 public class LoginController {
@@ -44,13 +44,7 @@ public class LoginController {
     public ModelAndView createNewUser( @Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
         User userExists = userService.findUserByUserName(user.getUserName());
-        System.out.println("_______________");
-        System.out.println("password : " + user.getPassword());
-        System.out.println("lName : " + user.getLastName());
-        System.out.println("name : " + user.getName());
-        System.out.println("email : " + user.getEmail());
-        System.out.println("_______________");
-
+      
 
         if (userExists != null) {
             bindingResult
@@ -58,7 +52,6 @@ public class LoginController {
                             "There is already a user registered with the user name provided");
         }
         if (bindingResult.hasErrors()) {
-            System.out.println("error");
             modelAndView.setViewName("auth/registration");
         } else {
             userService.saveUser(user);
