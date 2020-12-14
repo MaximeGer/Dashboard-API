@@ -21,7 +21,7 @@ public class SteamController {
     public String getSteamGameNews(@PathVariable("id") long id) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?key=677DFBDBD45B7DCF500D1A3D0EAE0A62&format=JSON&appid="+id))
+                .uri(URI.create("http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid="+id))
                 .build();
 
         HttpResponse<String> response = client.send(request,
@@ -29,7 +29,4 @@ public class SteamController {
 
         return response.body();
     }
-
-
-  
 }
