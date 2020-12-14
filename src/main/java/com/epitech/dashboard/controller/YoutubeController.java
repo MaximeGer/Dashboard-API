@@ -27,6 +27,18 @@ public class YoutubeController {
         return response.body();
     }
 
+    @RequestMapping(value = "/api/youtube/getChannel/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getChannel(@PathVariable("id") String id) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/channels/?part=snippet&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&id=" + id))
+                .build();
+        HttpResponse<String> response = client.send(request,
+                HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
 
     @RequestMapping(value = "/api/youtube/searchVideo/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
