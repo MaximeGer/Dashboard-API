@@ -105,6 +105,8 @@
                     </div>
 
 
+                    
+
                     <div id="steamPanel" class="tab-pane fade input-group mb-3">
                         <h3>Steam</h3>
                         <select name="selectGame" id="selectGame" class="selectpicker">
@@ -117,13 +119,41 @@
                         <div id=widgetSteamNews></div>
                     </div>
 
+            
+
                     <div id="moviesPanel" class="tab-pane fade input-group mb-3">
                         <h3>Movies</h3>
-                        <span>Range: </span>
-                        <input type="date" id="bottom-date"><span> - </span>
-                        <input type="date" id="high-date"><br><br>
-                        <button id=getMoviesByPopularity class="btn">Get the most popular movies between two dates that you chose</button>
-                        <div id=widgetMoviesByPopularity></div>
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li><a data-toggle="tab" href="#moviesByPopularity">getMoviesByPopularity</a></li>
+                                <li><a data-toggle="tab" href="#searchMovies">searchMovies</a></li>
+                                <li><a data-toggle="tab" >widget 3?</a></li>
+                            </ul>
+                            <br>
+                            <div class="tab-content">
+                                <div id="moviesByPopularity" class="tab-pane fade input-group mb-3">
+                                    <div class="mb-3">
+                                        <h3>Movies</h3>
+                                        <span>Range: </span>
+                                        <input type="date" id="bottom-date"><span> - </span>
+                                        <input type="date" id="high-date"><br><br>
+                                        <button id=getMoviesByPopularity class="btn">Get the most popular movies between two dates that you chose</button>
+                                        <div id=widgetMoviesByPopularity></div>
+                                    </div>
+                                    <br>
+                                </div>
+
+                                <div id="searchMovies" class="tab-pane fade input-group mb-3">
+                                    <div class="mb-3">
+                                        <input type="text" id="inputSearchMovies">
+                                    </div>
+                                    <br>
+                                    <button id="btnSearchMovies" class="btn mb-3">Search your movie</button>
+                                    <br>
+                                    <div id="widgetSearchMovies"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,7 +164,7 @@
     <script type="text/javascript" th:src="@{/js/steam/ajaxSteamGetNews.js}"></script>
     <script type="text/javascript" th:src="@{/js/youtube/getChannelInfo.js}"></script>
     <script type="text/javascript" th:src="@{/js/youtube/getVideoInfo.js}"></script>
-    <script type="text/javascript" th:src="@{/js/movies/ajaxMoviesByPopularity.js}"></script>
+    <script type="text/javascript" th:src="@{/js/movies/ajaxMovies.js}"></script>
 </div>
 </body>
 </html>

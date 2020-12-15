@@ -29,4 +29,18 @@ public class MoviesController {
 
         return response.body();
     }
+    
+    @RequestMapping(value = "/api/movies/search", params= {"name"} , method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String searchMovies(@RequestParam("name") String name) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://api.themoviedb.org/3/search/movie?api_key=56c9f82dd80939aa8dc40cb237a222e9&query=" + name))
+                .build();
+
+        HttpResponse<String> response = client.send(request,
+                HttpResponse.BodyHandlers.ofString());
+
+        return response.body();
+    }
 }
