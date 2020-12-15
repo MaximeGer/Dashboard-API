@@ -7,7 +7,7 @@ function ajaxShowMovies(url, widget) {
             $(widget).html("");
             console.log(result)
             movieItems = result["results"];
-            if(movieItems[0] === undefined){
+            if(movieItems[0] === undefined && widget == "#widgetMoviesByPopularity"){
                 $(widget).html("<p style='color: red'>These are not valid dates, recheck what you wrote</p>");
             }
             else{
@@ -25,6 +25,7 @@ function ajaxShowMovies(url, widget) {
         
         },
         error: function(error){
+            
             console.log("error");
             console.log(error.HEADERS_RECEIVED)
         }
