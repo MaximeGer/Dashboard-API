@@ -20,7 +20,7 @@ public class YoutubeController {
     public String getVideo(@PathVariable("id") String id) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/videos/?part=snippet&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&id=" + id))
+                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/videos/?part=snippet&part=player&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&id=" + id))
                 .build();
         HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
@@ -32,7 +32,7 @@ public class YoutubeController {
     public String getChannel(@PathVariable("id") String id) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/channels/?part=snippet&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&id=" + id))
+                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/channels/?part=snippet&part=statistics&part=contentDetails&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&id=" + id))
                 .build();
         HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
@@ -40,12 +40,12 @@ public class YoutubeController {
     }
 
 
-    @RequestMapping(value = "/api/youtube/searchVideo/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/api/youtube/searchVideo/{str}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String searchVideo(@PathVariable("id") String id) throws IOException, InterruptedException {
+    public String searchVideo(@PathVariable("str") String str) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&q=https://youtu.be/" + id))
+                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/search/?part=snippet&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&q=https://youtu.be/" + str))
                 .build();
         HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
