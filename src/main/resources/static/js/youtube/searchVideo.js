@@ -30,6 +30,7 @@ $("#searchVideoButton").click(function(){
                 }
             },
             error: function(error){
+                console.error(error);
                 console.error("Error : " +error.responseJSON.error + ", status : "+ error.responseJSON.status)
                 console.error("Message : " +error.responseJSON.message)
             }
