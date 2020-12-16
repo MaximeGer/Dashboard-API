@@ -68,9 +68,9 @@
                         <h3>Youtube</h3>
                         <div class="panel-body">
                             <ul class="nav nav-tabs">
-                                <li><a data-toggle="tab" href="#selectVideo">selectVideo</a></li>
-                                <li><a data-toggle="tab" href="#selectChannel">selectChannel</a></li>
-                                <li><a data-toggle="tab" href="#searchVideo">searchVideo</a></li>
+                                <li><a data-toggle="tab" href="#selectVideo">Select Video</a></li>
+                                <li><a data-toggle="tab" href="#selectChannel">Select Channel</a></li>
+                                <li><a data-toggle="tab" href="#searchVideo">Search Video</a></li>
                             </ul>
                             <br>
 
@@ -97,9 +97,19 @@
                                         <p>Get the infos of the video you selected</p>
                                     </div>
                                 </div>
-                                <div id="searchVideo" class="tab-pane fade input-group mb-3">
 
+                                <div id="searchVideo" class="tab-pane fade input-group mb-3">
+                                    <input type="text" id="searchVideoInput" name="searchVideoInput" class="form-control" placeholder="Search video" aria-label="Search video" aria-describedby="basic-addon2">
+                                    <br>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" id="searchVideoButton" type="button">Button</button>
+                                    </div>
+                                    <br>
+                                    <div id=widgetSearchedVideoInfos>
+                                        <p>Search the video</p>
+                                    </div>
                                 </div>
+
 
 
                                 <div id="selectChannel" class="tab-pane fade input-group mb-3">
@@ -116,16 +126,27 @@
                                     <button id=getChannel class="btn mb-3">Search channel</button>
                                     <br>
                                     <div id=widgetChannelInfos>
-                                        <p>Get the last 3 videos of the channel you selected</p>
+                                        <p>Get the infos of the channel you selected</p>
                                     </div>
                                 </div>
+
+
+                                <div id="searchVideo" class="tab-pane fade input-group mb-3">
+                                    <input type="text" id="searchVideoInput" name="searchVideoInput" class="form-control" placeholder="Search video" aria-label="Search video" aria-describedby="basic-addon2">
+                                    <br>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" id="searchVideoButton" type="button">Button</button>
+                                    </div>
+                                    <br>
+                                    <div id=widgetSearchedVideoInfos>
+                                        <p>Search the video</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-
-
                     
-
                     <div id="steamPanel" class="tab-pane fade input-group mb-3">
                         <h3>Steam</h3>
                         <select name="selectGame" id="selectGame" class="selectpicker">
@@ -137,8 +158,6 @@
                         <button id=getNews class="btn">Get the news of the game you selected</button>
                         <div id=widgetSteamNews></div>
                     </div>
-
-            
 
                     <div id="moviesPanel" class="tab-pane fade input-group mb-3">
                         <h3>Movies</h3>
@@ -242,9 +261,11 @@
     <script type="text/javascript" th:src="@{/js/steam/ajaxSteamGetNews.js}"></script>
     <script type="text/javascript" th:src="@{/js/youtube/getChannelInfo.js}"></script>
     <script type="text/javascript" th:src="@{/js/youtube/getVideoInfo.js}"></script>
+    <script type="text/javascript" th:src="@{/js/youtube/searchVideo.js}"></script>
     <script type="text/javascript" th:src="@{/js/movies/ajaxMovies.js}"></script>
     <script type="text/javascript" th:src="@{/js/LoveCalculator/ajaxLoveGetPercentage.js}"></script>
     <script type="text/javascript" th:src="@{/js/weather/ajaxWeatherGetMeteo.js}"></script>
+
 </div>
 </body>
 </html>
