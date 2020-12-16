@@ -10,9 +10,7 @@ $("#getCity").click(function(){
             description = result["weather"]["0"]["description"];
             capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1);
             $("#widgetWeather").find("tbody").append("<tr><td>" + capitalizedCity + "</td> <td>" + temp + "°C</td> <td>" + description +"</td></tr>");
-            console.log(description);
-
-        },
+         },
         error: function(error){
             console.log("error");
             console.log(error.HEADERS_RECEIVED)
