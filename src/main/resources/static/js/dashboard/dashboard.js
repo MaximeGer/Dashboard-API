@@ -4,7 +4,7 @@ $("#addWidgetWeather").click(function (){
 $("#addWidgetVideoInfos").click(function (){
     $("#dashboard").append(widgetVideoInfos)
 });
-$("#addWidChannelInfos").click(function (){
+$("#addWidgetChannelInfos").click(function (){
     $("#dashboard").append(widgetChannelInfos)
 });
 $("#addWidgetSearchedVideoInfos").click(function (){
