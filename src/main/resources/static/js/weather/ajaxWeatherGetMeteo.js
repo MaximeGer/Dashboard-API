@@ -6,10 +6,11 @@ $("#getCity").click(function(){
         success: function(result){
             temp = (result["main"]["temp"]) - 273.15;
             temp = temp.toFixed(2);
-            console.log(temp);
-            console.log($("#selectCity").val());
-            $("#widgetWeather").append("<div><p>A " + $("#selectCity").val() + " il fait" + temp + "</p></div><hr>");
-
+            city = $("#selectCity").val();
+            description = result["weather"]["0"]["description"];
+            capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1);
+            $("#widgetWeather").find("tbody").append("<tr><td>" + capitalizedCity + "</td> <td>" + temp + "°C</td> <td>" + description +"</td></tr>");
+            console.log(description);
 
         },
         error: function(error){
