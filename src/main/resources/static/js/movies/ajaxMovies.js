@@ -10,6 +10,9 @@ function ajaxShowMovies(url, widget) {
             if(movieItems[0] === undefined && widget == "#widgetMoviesByPopularity"){
                 $(widget).html("<p style='color: red'>These are not valid dates, recheck what you wrote</p>");
             }
+            else if(movieItems[0] === undefined && widget == "#widgetSearchMovies"){
+                $(widget).html("<p style='color: red'>Found nothing</p>");
+            }
             else{
                 for (var i=0; i<=5; i++) {
                     $(widget).append("<div class='movie' style='text-align: center'>\
