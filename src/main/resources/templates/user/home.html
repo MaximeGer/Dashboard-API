@@ -40,7 +40,9 @@
                     <div class="tab-content">
 
                     <div id="home" class="tab-pane fade in active">
-                        <h3>Choose a widget to display in the list</h3>
+                        <div id="dashboard">                        
+                            <h3>Choose a widget in the list to display it here</h3>
+                        </div>
                     </div>
 
                     <div id="weather" class="tab-pane fade input-group mb-3">
@@ -74,7 +76,6 @@
                             </ul>
                             <br>
 
-
                             <div class="tab-content">
                                 <div id="selectVideo" class="tab-pane fade input-group mb-3">
                                     <div class="mb-3">
@@ -97,20 +98,6 @@
                                         <p>Get the infos of the video you selected</p>
                                     </div>
                                 </div>
-
-                                <div id="searchVideo" class="tab-pane fade input-group mb-3">
-                                    <input type="text" id="searchVideoInput" name="searchVideoInput" class="form-control" placeholder="Search video" aria-label="Search video" aria-describedby="basic-addon2">
-                                    <br>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" id="searchVideoButton" type="button">Button</button>
-                                    </div>
-                                    <br>
-                                    <div id=widgetSearchedVideoInfos>
-                                        <p>Search the video</p>
-                                    </div>
-                                </div>
-
-
 
                                 <div id="selectChannel" class="tab-pane fade input-group mb-3">
                                     <div class="mb-3">
@@ -269,6 +256,10 @@
     <script type="text/javascript" th:src="@{/js/movies/ajaxMovies.js}"></script>
     <script type="text/javascript" th:src="@{/js/LoveCalculator/ajaxLoveGetPercentage.js}"></script>
     <script type="text/javascript" th:src="@{/js/weather/ajaxWeatherGetMeteo.js}"></script>
+    <script type="text/javascript" th:src="@{/js/dashboard/dashboard.js}"></script>
+    <script type="text/javascript" th:src="@{/js/dashboard/widgets.js}"></script>
+
+
 
 </div>
 </body>
