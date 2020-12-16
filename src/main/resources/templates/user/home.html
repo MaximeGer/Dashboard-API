@@ -30,7 +30,7 @@
             <div class="panel-body">
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                    <li><a data-toggle="tab" href="#service1">Service 1</a></li>
+                    <li><a data-toggle="tab" href="#weather">Weather</a></li>
                     <li><a data-toggle="tab" href="#youtubePanel">Youtube</a></li>
                     <li><a data-toggle="tab" href="#steamPanel">Steam</a></li>
                     <li><a data-toggle="tab" href="#moviesPanel">Movies</a></li>
@@ -41,9 +41,23 @@
                     <div id="home" class="tab-pane fade in active">
                         <h3>Veuillez choisir un service</h3>
                     </div>
-                    <div id="service1" class="tab-pane fade">
-                        <h3>Service 1</h3>
-
+                    <div id="weather" class="tab-pane fade input-group mb-3">
+                        <h3>Weather</h3>
+                        <div>
+                            <input type="text" name="selectCity" id="selectCity">
+                            <button id="getCity" class="btn">get the weather of your city</button>
+                        </div>
+                        <table id="widgetWeather" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>City</th>
+                                    <th>Temperature</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>   
+                            </tbody>
+                        </table>
                     </div>
 
                     <div id="youtubePanel" class="tab-pane fade input-group mb-3">
@@ -174,6 +188,7 @@
     <script type="text/javascript" th:src="@{/js/youtube/getVideoInfo.js}"></script>
     <script type="text/javascript" th:src="@{/js/movies/ajaxMovies.js}"></script>
     <script type="text/javascript" th:src="@{/js/LoveCalculator/ajaxLoveGetPercentage.js}"></script>
+    <script type="text/javascript" th:src="@{/js/weather/ajaxWeatherGetMeteo.js}"></script>
 </div>
 </body>
 </html>
