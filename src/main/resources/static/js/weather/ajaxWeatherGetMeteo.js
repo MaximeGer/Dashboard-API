@@ -4,7 +4,12 @@ $("#getCity").click(function(){
         methode: 'GET',
         contentType: 'application/json',
         success: function(result){
-            console.log(result);
+            temp = (result["main"]["temp"]) - 273.15;
+            temp = temp.toFixed(2);
+            console.log(temp);
+            console.log($("#selectCity").val());
+            $("#widgetWeather").append("<div><p>A " + $("#selectCity").val() + " il fait" + temp + "</p></div><hr>");
+
 
         },
         error: function(error){
