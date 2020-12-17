@@ -2,12 +2,16 @@ package com.epitech.dashboard.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class City {
 
     @JsonIgnore
     private Long id;
+
+    HashMap<String, String> client = new HashMap<String, String>();
 
     private String name;
     private int population;
@@ -16,10 +20,19 @@ public class City {
     }
 
     public City(Long id, String name, int population) {
+        client.put("host", "10.101.53.35");
 
         this.id = id;
         this.name = name;
         this.population = population;
+    }
+
+    public HashMap<String, String> getClient() {
+        return client;
+    }
+
+    public void setClient(HashMap<String, String> client) {
+        this.client = client;
     }
 
     public Long getId() {
@@ -42,43 +55,4 @@ public class City {
         this.population = population;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.id);
-        hash = 79 * hash + Objects.hashCode(this.name);
-        hash = 79 * hash + this.population;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final City other = (City) obj;
-        if (this.population != other.population) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return Objects.equals(this.id, other.id);
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("City{");
-        sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", population=").append(population);
-        sb.append('}');
-        return sb.toString();
-    }
 }
