@@ -43,21 +43,33 @@
                     </div>
                     <div id="weather" class="tab-pane fade input-group mb-3">
                         <h3>Weather</h3>
-                        <div>
-                            <input type="text" name="selectCity" id="selectCity">
-                            <button id="getCity" class="btn">get the weather of your city</button>
+                        <div class="weatherPanel-body">
+                            <ul class="nav nav-tabs">
+                                <li><a data-toggle="tab" href="#cityWeather">city weather</a></li>
+                                <!-- <li><a data-toggle="tab" href="#selectChannel">selectChannel</a></li>
+                                <li><a data-toggle="tab" href="#searchVideo">searchVideo</a></li> -->
+                            </ul>
+                            <br>
+                            <div class="tab-content">
+                                <div id="cityWeather" class="tab-pane fade input-group mb-3">
+                                    <div>
+                                        <input type="text" name="selectCity" id="selectCity">
+                                        <button id="getCity" class="btn">get the weather of your city</button>
+                                    </div>
+                                    <table id="widgetWeather" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>City</th>
+                                                <th>Temperature</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                        <table id="widgetWeather" class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>City</th>
-                                    <th>Temperature</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>   
-                            </tbody>
-                        </table>
                     </div>
 
                     <div id="youtubePanel" class="tab-pane fade input-group mb-3">
