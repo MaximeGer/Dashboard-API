@@ -1,4 +1,4 @@
-$("#searchVideoButton").click(function(){
+$("body").on("click","#searchVideoButton", function(){
     if($("#searchVideoInput").val().length > 0){
         $.ajax({
             url: "/api/youtube/searchVideo/" + $("#searchVideoInput").val(),

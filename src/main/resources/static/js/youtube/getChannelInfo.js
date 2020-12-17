@@ -1,4 +1,4 @@
-$("#getChannel").click(function(){
+$("body").on("click","#getChannel", function(){
     $.ajax({
         url: "/api/youtube/getChannel/" + $("#selectedChannel").val(),
         method: 'GET',

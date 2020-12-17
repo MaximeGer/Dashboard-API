@@ -1,4 +1,4 @@
-$("#getCity").click(function(){
+$("body").on("click","#getCity", function(){
     $.ajax({
         url: "/weather/city/" + $("#selectCity").val(),
         methode: 'GET',

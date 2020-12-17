@@ -1,4 +1,4 @@
-$("#getVideo").click(function(){
+$("body").on("click","#getVideo", function(){
     $.ajax({
         url: "/api/youtube/getVideo/" + $("#selectedVideo").val(),
         method: 'GET',
