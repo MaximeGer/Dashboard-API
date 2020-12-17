@@ -1,4 +1,4 @@
-$("#getLove").click(function(){
+$("body").on("click", "#getLove", function(){
     fname = $("#fname").val().replace(" ","");
     sname = $("#sname").val().replace(" ", "")
     $.ajax({

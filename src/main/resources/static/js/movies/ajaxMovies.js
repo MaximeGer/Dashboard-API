@@ -35,11 +35,11 @@ function ajaxShowMovies(url, widget) {
     });
 }
 
-$("#getMoviesByPopularity").click(function(){
+$("body").on("click","#getMoviesByPopularity", function(){
     ajaxShowMovies("/api/movies/getByPopularity?high-date=" + $("#high-date").val()+"&bottom-date="+ $("#bottom-date").val(), "#widgetMoviesByPopularity")
 });
 
-$("#btnSearchMovies").on("click",function(){
+$("body").on("click","#btnSearchMovies",function(){
     ajaxShowMovies("http://api.themoviedb.org/3/search/movie?api_key=56c9f82dd80939aa8dc40cb237a222e9&query="+$("#inputSearchMovies").val(), "#widgetSearchMovies");
     console.log($("#inputSearchMovies").val());
 })
