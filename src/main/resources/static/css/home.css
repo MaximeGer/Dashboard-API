@@ -1,9 +1,12 @@
 
 .widget{
-    flex: 50%;
-    background-color:  lightgrey;
+    padding: 10px;
+    flex: 40%;
+    background-color:  #D3D3D3;
     border-radius: 20px;
 }
 #dashboard{
     display:flex;
+    flex-wrap: wrap;
+    gap: 5%
 }
