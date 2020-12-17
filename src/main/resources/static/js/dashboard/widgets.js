@@ -1,4 +1,5 @@
 var widgetWeather = "<div id='containerWidgetWeather'>\
+                        <h3>Weather</h3>\
                         <div>\
                             <input type='text' name='selectCity' id='selectCity'>\
                             <button id='getCity' class='btn'>get the weather of your city</button>\
@@ -18,6 +19,7 @@ var widgetWeather = "<div id='containerWidgetWeather'>\
                     <div>";
 
 var widgetVideoInfos = "<div id='containerWidgetVideoInfos'>\
+                            <h3>Youtube</h3>\
                             <select id='selectedVideo' class='selectpicker'>\
                                 <option value='Trz0r-0ULtw' selected>Painting tutorial - Aeolian</option>\
                                 <option value='oPc4z_wUKsM'>5 idées reçues sur l'Egypte antique - Nota Bene\
@@ -33,12 +35,12 @@ var widgetVideoInfos = "<div id='containerWidgetVideoInfos'>\
                             <button id=getVideo class='btn mb-3'>Search video</button>\
                             <br>\
                             <div id=widgetVideoInfos>\
-                                <p>Get the infos of the video you selected</p>\
                             </div>\
                         <hr>\
                         <div>";
 
 var widgetChannelInfos = "<div id='containerWidgetChannelInfos'>\
+                            <h3>Youtube</h3>\
                             <select id='selectedChannel' class='selectpicker'>\
                                 <option value='UCxo56gzJQ_fhb6svPqTSewg' selected>Fnatic</option>\
                                 <option value='UCHsRtomD4twRf5WVHHk-cMw'>TierZoo</option>\
@@ -50,20 +52,19 @@ var widgetChannelInfos = "<div id='containerWidgetChannelInfos'>\
                             <button id=getChannel class='btn mb-3'>Search channel</button>\
                             <br>\
                             <div id=widgetChannelInfos>\
-                                <p>Get the infos of the channel you selected</p>\
                             </div>\
                         <hr>\
                         <div>";
 
 var widgetSearchedVideoInfos = "<div id='containerWidgetSearchedVideoInfos'>\
+                                    <h3>Youtube</h3>\
                                     <input type='text' id='searchVideoInput' name='searchVideoInput' class='form-control' placeholder='Search video' aria-label='Search video' aria-describedby='basic-addon2'>\
                                     <br>\
                                     <div class='input-group-append'>\
-                                        <button class='btn btn-outline-secondary' id='searchVideoButton' type='button'>Button</button>\
+                                        <button class='btn btn-outline-secondary' id='searchVideoButton' type='button'>Search the video</button>\
                                     </div>\
                                     <br>\
                                     <div id=widgetSearchedVideoInfos>\
-                                        <p>Search the video</p>\
                                     </div>\
                                 <hr>\
                                 <div>";
@@ -92,6 +93,7 @@ var widgetMoviesByPopularity = "<div id=containerWidgetMoviesByPopularity>\
                                 </div>";
 
 var widgetSearchMovies = "<div id='containerWidgetSearchMovies'>\
+                            <h3>Movies</h3>\
                             <input type='text' id='inputSearchMovies' class='form-control' placeholder='Type the movie your searching for here'>\
                             </div>\
                             <br>\
