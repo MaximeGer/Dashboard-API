@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 var widgetWeather = "<div id='containerWidgetWeather' class='widget'>\
-=======
-var widgetWeather = "<div id='containerWidgetWeather'>\
->>>>>>> master
                         <h3>Weather</h3>\
                         <div>\
                             <input type='text' name='selectCity' id='selectCity'>\
@@ -22,11 +18,7 @@ var widgetWeather = "<div id='containerWidgetWeather'>\
                     </hr>\
                     <div>";
 
-<<<<<<< HEAD
 var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget'>\
-=======
-var widgetVideoInfos = "<div id='containerWidgetVideoInfos'>\
->>>>>>> master
                             <h3>Youtube</h3>\
                             <select id='selectedVideo' class='selectpicker'>\
                                 <option value='Trz0r-0ULtw' selected>Painting tutorial - Aeolian</option>\
@@ -47,11 +39,7 @@ var widgetVideoInfos = "<div id='containerWidgetVideoInfos'>\
                         <hr>\
                         <div>";
 
-<<<<<<< HEAD
 var widgetChannelInfos = "<div id='containerWidgetChannelInfos' class='widget'>\
-=======
-var widgetChannelInfos = "<div id='containerWidgetChannelInfos'>\
->>>>>>> master
                             <h3>Youtube</h3>\
                             <select id='selectedChannel' class='selectpicker'>\
                                 <option value='UCxo56gzJQ_fhb6svPqTSewg' selected>Fnatic</option>\
@@ -68,11 +56,7 @@ var widgetChannelInfos = "<div id='containerWidgetChannelInfos'>\
                         <hr>\
                         <div>";
 
-<<<<<<< HEAD
 var widgetSearchedVideoInfos = "<div id='containerWidgetSearchedVideoInfos' class='widget'>\
-=======
-var widgetSearchedVideoInfos = "<div id='containerWidgetSearchedVideoInfos'>\
->>>>>>> master
                                     <h3>Youtube</h3>\
                                     <input type='text' id='searchVideoInput' name='searchVideoInput' class='form-control' placeholder='Search video' aria-label='Search video' aria-describedby='basic-addon2'>\
                                     <br>\
@@ -108,11 +92,7 @@ var widgetMoviesByPopularity = "<div id=containerWidgetMoviesByPopularity class=
                                 <hr>\
                                 </div>";
 
-<<<<<<< HEAD
 var widgetSearchMovies = "<div id='containerWidgetSearchMovies' class='widget'>\
-=======
-var widgetSearchMovies = "<div id='containerWidgetSearchMovies'>\
->>>>>>> master
                             <h3>Movies</h3>\
                             <input type='text' id='inputSearchMovies' class='form-control' placeholder='Type the movie your searching for here'>\
                             </div>\
