@@ -1,0 +1,9 @@
+
+.widget{
+    flex: 50%;
+    background-color:  lightgrey;
+    border-radius: 20px;
+}
+#dashboard{
+    display:flex;
+}
