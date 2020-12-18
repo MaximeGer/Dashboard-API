@@ -1,12 +1,11 @@
 package com.epitech.dashboard.controller;
 
-import com.epitech.dashboard.model.Param;
-import com.epitech.dashboard.model.Service;
-import com.epitech.dashboard.model.Widget;
+import com.epitech.dashboard.about.Param;
+import com.epitech.dashboard.about.Service;
+import com.epitech.dashboard.about.Widget;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;

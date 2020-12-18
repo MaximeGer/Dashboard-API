@@ -1,4 +1,4 @@
-package com.epitech.dashboard.model;
+package com.epitech.dashboard.about;
 
 public class Param {
 

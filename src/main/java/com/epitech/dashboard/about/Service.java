@@ -1,4 +1,4 @@
-package com.epitech.dashboard.model;
+package com.epitech.dashboard.about;
 
 import java.util.ArrayList;
 
