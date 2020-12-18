@@ -54,14 +54,84 @@ public class AboutController
     private List<Service> initServices(){
         List<Service> services = new ArrayList<>();
 
-        Service serviceWeather = new Service("weather");
-        Widget widgetTemp = new Widget("city_temperature", "Display temperature for a city");
-        Param cityParam = new Param("city", "string");
+        Service serviceTemp = new Service("Weather");
+        Widget widgetTemp = new Widget("Get weather", "Display temperature & weather for a city");
+        Param paramTemp = new Param("city", "string");
 
-        widgetTemp.addParam(cityParam);
-        serviceWeather.addWidget(widgetTemp);
+        widgetTemp.addParam(paramTemp);
+        serviceTemp.addWidget(widgetTemp);
 
-        services.add(serviceWeather);
+        services.add(serviceTemp);
+
+
+
+        serviceTemp = new Service("Youtube");
+        widgetTemp = new Widget("Select video", "Display information of a video");
+        paramTemp = new Param("videoId", "string");
+
+        widgetTemp.addParam(paramTemp);
+        serviceTemp.addWidget(widgetTemp);
+
+
+        widgetTemp = new Widget("Select channel", "Display information of a channel");
+        paramTemp = new Param("channelId", "string");
+
+        widgetTemp.addParam(paramTemp);
+        serviceTemp.addWidget(widgetTemp);
+
+
+        widgetTemp = new Widget("Search video", "Display 5 videos according to the searched string");
+        paramTemp = new Param("searchedVideo", "string");
+
+        widgetTemp.addParam(paramTemp);
+        serviceTemp.addWidget(widgetTemp);
+
+        services.add(serviceTemp);
+
+
+        serviceTemp = new Service("Steam");
+        widgetTemp = new Widget("Get news", "Display news according to the game selected");
+        paramTemp = new Param("gameId", "string");
+
+        widgetTemp.addParam(paramTemp);
+        serviceTemp.addWidget(widgetTemp);
+
+        services.add(serviceTemp);
+
+
+        serviceTemp = new Service("Movies");
+        widgetTemp = new Widget("Get movies by popularity", "Display the most popular movies between the date selected (of the moment if not selected)");
+
+        paramTemp = new Param("date1", "string");
+        widgetTemp.addParam(paramTemp);
+
+        paramTemp = new Param("date2", "string");
+        widgetTemp.addParam(paramTemp);
+
+        serviceTemp.addWidget(widgetTemp);
+
+
+        widgetTemp = new Widget("Search movies", "Display 5 movies according to the searched string");
+        paramTemp = new Param("searchedMovie", "string");
+
+        widgetTemp.addParam(paramTemp);
+        serviceTemp.addWidget(widgetTemp);
+
+        services.add(serviceTemp);
+
+
+        serviceTemp = new Service("Love calculator");
+        widgetTemp = new Widget("Get love", "Display the love percentage between two people <3");
+
+        paramTemp = new Param("people1", "string");
+        widgetTemp.addParam(paramTemp);
+
+        paramTemp = new Param("people2", "string");
+        widgetTemp.addParam(paramTemp);
+
+        serviceTemp.addWidget(widgetTemp);
+
+        services.add(serviceTemp);
 
         return services;
     }
