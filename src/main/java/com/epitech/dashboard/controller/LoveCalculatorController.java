@@ -19,7 +19,6 @@ public class LoveCalculatorController {
     @RequestMapping(value = "/api/loveCalculator", params= {"fname", "sname"} , method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String loveCalculator(@RequestParam("fname") String fname, @RequestParam("sname") String sname) throws IOException, InterruptedException {
-        System.out.println("test");
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create("https://love-calculator.p.rapidapi.com/getPercentage?fname="+fname+"&sname="+sname))
             .header("x-rapidapi-key", "e665467dc2mshb8e66ef5b031977p12448ejsn6eee88a8dfe0")

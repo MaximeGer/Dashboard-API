@@ -1,0 +1,18 @@
+.widgetTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.widget{
+    padding: 10px;
+    flex: 40%;
+    background-color:  #f8f8f8;
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+#dashboard{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 5%
+}
