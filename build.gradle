@@ -36,6 +36,13 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
 	compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.1.6.Final'
 
+	// https://mvnrepository.com/artifact/org.json/json
+	compile group: 'org.json', name: 'json', version: '20180130'
+	// https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
+
+
 }
 
 test {
