@@ -19,13 +19,13 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+
     @RequestMapping(value={"/", "login"}, method = RequestMethod.GET)
     public ModelAndView login(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("auth/login");
         return modelAndView;
     }
-
 
     @RequestMapping(value="/registration", method = RequestMethod.GET)
     public ModelAndView registration(){
@@ -75,7 +75,6 @@ public class LoginController {
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUserName(auth.getName());
-        modelAndView.addObject("userName", "Welcome " + user.getUserName());
         modelAndView.addObject("userMessage","Here is your home user");
         modelAndView.setViewName("user/home");
         return modelAndView;
