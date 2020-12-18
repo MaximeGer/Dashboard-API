@@ -21,7 +21,6 @@ $("body").on("click","#getCity", function(){
 $("document").ready(function(){
     setInterval(function(){
         rowCount = $("#cityBody tr").length;
-        console.log(rowCount);
         for ( i = 0; i < rowCount; i++) {
             cityName = document.querySelector("#cityBody").children[i].children[0].innerHTML;
             $.ajax({
