@@ -1,4 +1,4 @@
-var widgetWeather = "<div id='containerWidgetWeather' class='widget'>\
+var widgetWeather = "<div id='containerWidgetWeather' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                         <div class=widgetTitle>\
                             <h3>Weather</h3>\
                             <button class='btn btn-danger suicide'>&#10005;</button>\
@@ -19,7 +19,7 @@ var widgetWeather = "<div id='containerWidgetWeather' class='widget'>\
                     </hr>\
                     <div>";
 
-var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget'>\
+var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                             <div class=widgetTitle>\
                                 <h3>Youtube</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\
@@ -43,7 +43,7 @@ var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget'>\
                         <hr>\
                         <div>";
 
-var widgetChannelInfos = "<div id='containerWidgetChannelInfos' class='widget'>\
+var widgetChannelInfos = "<div id='containerWidgetChannelInfos' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                             <div class=widgetTitle>\
                                 <h3>Youtube</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\
@@ -63,7 +63,7 @@ var widgetChannelInfos = "<div id='containerWidgetChannelInfos' class='widget'>\
                         <hr>\
                         <div>";
 
-var widgetSearchedVideoInfos = "<div id='containerWidgetSearchedVideoInfos' class='widget'>\
+var widgetSearchedVideoInfos = "<div id='containerWidgetSearchedVideoInfos' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                                     <div class=widgetTitle>\
                                         <h3>Youtube</h3>\
                                         <button class='btn btn-danger suicide'>&#10005;</button>\
@@ -79,7 +79,7 @@ var widgetSearchedVideoInfos = "<div id='containerWidgetSearchedVideoInfos' clas
                                 <hr>\
                                 <div>";
 
-var widgetSteamNews = " <div id='containerWidgetSteamNews' class='widget'>\
+var widgetSteamNews = " <div id='containerWidgetSteamNews' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                             <div class=widgetTitle>\
                                 <h3>Steam</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\
@@ -95,7 +95,7 @@ var widgetSteamNews = " <div id='containerWidgetSteamNews' class='widget'>\
                         <hr>\
                         <div>";
 
-var widgetMoviesByPopularity = "<div id=containerWidgetMoviesByPopularity class='widget'>\
+var widgetMoviesByPopularity = "<div id=containerWidgetMoviesByPopularity class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                                     <div class=widgetTitle>\
                                         <h3>Movies</h3>\
                                         <button class='btn btn-danger suicide'>&#10005;</button>\
@@ -108,7 +108,7 @@ var widgetMoviesByPopularity = "<div id=containerWidgetMoviesByPopularity class=
                                 <hr>\
                                 </div>";
 
-var widgetSearchMovies = "<div id='containerWidgetSearchMovies' class='widget'>\
+var widgetSearchMovies = "<div id='containerWidgetSearchMovies' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                             <div class=widgetTitle>\
                                 <h3>Movies</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\
@@ -120,7 +120,7 @@ var widgetSearchMovies = "<div id='containerWidgetSearchMovies' class='widget'>\
                             <div id='widgetSearchMovies'></div>\
                         <hr>\
                         </div>";
-var widgetLoveCalc = "  <div id='containerWidgetLoveCalc' class='widget'>\
+var widgetLoveCalc = "  <div id='containerWidgetLoveCalc' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                             <div class=widgetTitle>\
                                 <h3>&#10084; Love Calculator &#10084;</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\
@@ -131,3 +131,37 @@ var widgetLoveCalc = "  <div id='containerWidgetLoveCalc' class='widget'>\
                             <div id=widgetLoveCalc></div>\
                         <hr>\
                         </div>";
+
+
+
+function drag(event) {
+    event.dataTransfer.setData
+        ('target_id', event.target.id);
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    
+    
+    if(event.target.className != "widget"){
+        var drop_target = event.target.closest(".widget");
+        var drag_target_id = event.dataTransfer.getData('target_id');
+        var drag_target = document.getElementById(drag_target_id);
+        var tmp = drag_target.outerHTML;
+        drag_target.outerHTML = drop_target.outerHTML;
+        drop_target.outerHTML = tmp;
+    }
+    else{
+        var drop_target = event.target;
+        var drag_target_id = event.dataTransfer.getData('target_id');
+        var drag_target = document.getElementById(drag_target_id);
+        var tmp = drag_target.outerHTML;
+        drag_target.outerHTML = drop_target.outerHTML;
+        drop_target.outerHTML = tmp;
+    }
+    
+}
