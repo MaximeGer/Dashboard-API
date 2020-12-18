@@ -36,10 +36,11 @@ function ajaxShowMovies(url, widget) {
 }
 
 $("body").on("click","#getMoviesByPopularity", function(){
-    ajaxShowMovies("/api/movies/getByPopularity?high-date=" + $("#high-date").val()+"&bottom-date="+ $("#bottom-date").val(), "#widgetMoviesByPopularity")
+    self = $(this).parent()
+    ajaxShowMovies("/api/movies/getByPopularity?high-date=" + self.find("#high-date").val()+"&bottom-date="+ self.find("#bottom-date").val(),self.find("#widgetMoviesByPopularity"))
 });
 
 $("body").on("click","#btnSearchMovies",function(){
-    ajaxShowMovies("http://api.themoviedb.org/3/search/movie?api_key=56c9f82dd80939aa8dc40cb237a222e9&query="+$("#inputSearchMovies").val(), "#widgetSearchMovies");
-    console.log($("#inputSearchMovies").val());
+    self = $(this).parent();
+    ajaxShowMovies("http://api.themoviedb.org/3/search/movie?api_key=56c9f82dd80939aa8dc40cb237a222e9&query="+self.find("#inputSearchMovies").val(), self.find("#widgetSearchMovies"));
 })

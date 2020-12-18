@@ -1,9 +1,10 @@
 var widgetWeather = "<div id='containerWidgetWeather' class='widget'>\
-                        <h3>Weather</h3>\
-                        <div>\
-                            <input type='text' name='selectCity' id='selectCity'>\
-                            <button id='getCity' class='btn'>get the weather of your city</button>\
+                        <div class=widgetTitle>\
+                            <h3>Weather</h3>\
+                            <button class='btn btn-danger suicide'>&#10005;</button>\
                         </div>\
+                        <input type='text' name='selectCity' id='selectCity'>\
+                        <button id='getCity' class='btn'>get the weather of your city</button>\
                         <table id='widgetWeather' class='table table-striped'>\
                             <thead>\
                                 <tr>\
@@ -19,8 +20,11 @@ var widgetWeather = "<div id='containerWidgetWeather' class='widget'>\
                     <div>";
 
 var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget'>\
-                            <h3>Youtube</h3>\
-                            <select id='selectedVideo' class='selectpicker'>\
+                            <div class=widgetTitle>\
+                                <h3>Youtube</h3>\
+                                <button class='btn btn-danger suicide'>&#10005;</button>\
+                             </div>\
+                             <select id='selectedVideo' class='selectpicker'>\
                                 <option value='Trz0r-0ULtw' selected>Painting tutorial - Aeolian</option>\
                                 <option value='oPc4z_wUKsM'>5 idées reçues sur l'Egypte antique - Nota Bene\
                                 </option>\
@@ -40,7 +44,10 @@ var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget'>\
                         <div>";
 
 var widgetChannelInfos = "<div id='containerWidgetChannelInfos' class='widget'>\
-                            <h3>Youtube</h3>\
+                            <div class=widgetTitle>\
+                                <h3>Youtube</h3>\
+                                <button class='btn btn-danger suicide'>&#10005;</button>\
+                            </div>\
                             <select id='selectedChannel' class='selectpicker'>\
                                 <option value='UCxo56gzJQ_fhb6svPqTSewg' selected>Fnatic</option>\
                                 <option value='UCHsRtomD4twRf5WVHHk-cMw'>TierZoo</option>\
@@ -57,7 +64,10 @@ var widgetChannelInfos = "<div id='containerWidgetChannelInfos' class='widget'>\
                         <div>";
 
 var widgetSearchedVideoInfos = "<div id='containerWidgetSearchedVideoInfos' class='widget'>\
-                                    <h3>Youtube</h3>\
+                                    <div class=widgetTitle>\
+                                        <h3>Youtube</h3>\
+                                        <button class='btn btn-danger suicide'>&#10005;</button>\
+                                    </div>\
                                     <input type='text' id='searchVideoInput' name='searchVideoInput' class='form-control' placeholder='Search video' aria-label='Search video' aria-describedby='basic-addon2'>\
                                     <br>\
                                     <div class='input-group-append'>\
@@ -70,7 +80,10 @@ var widgetSearchedVideoInfos = "<div id='containerWidgetSearchedVideoInfos' clas
                                 <div>";
 
 var widgetSteamNews = " <div id='containerWidgetSteamNews' class='widget'>\
-                            <h3>Steam</h3>\
+                            <div class=widgetTitle>\
+                                <h3>Steam</h3>\
+                                <button class='btn btn-danger suicide'>&#10005;</button>\
+                            </div>\
                             <select name='selectGame' id='selectGame' class='selectpicker'>\
                                 <option value='1091500' selected>Cyberpunk 2077</option>\
                                 <option value='945360'>Among Us</option>\
@@ -83,7 +96,10 @@ var widgetSteamNews = " <div id='containerWidgetSteamNews' class='widget'>\
                         <div>";
 
 var widgetMoviesByPopularity = "<div id=containerWidgetMoviesByPopularity class='widget'>\
-                                    <h3>Movies</h3>\
+                                    <div class=widgetTitle>\
+                                        <h3>Movies</h3>\
+                                        <button class='btn btn-danger suicide'>&#10005;</button>\
+                                    </div>\
                                     <span>Range: </span>\
                                     <input type='date' id='bottom-date'><span> - </span>\
                                     <input type='date' id='high-date'><br><br>\
@@ -93,9 +109,11 @@ var widgetMoviesByPopularity = "<div id=containerWidgetMoviesByPopularity class=
                                 </div>";
 
 var widgetSearchMovies = "<div id='containerWidgetSearchMovies' class='widget'>\
-                            <h3>Movies</h3>\
-                            <input type='text' id='inputSearchMovies' class='form-control' placeholder='Type the movie your searching for here'>\
+                            <div class=widgetTitle>\
+                                <h3>Movies</h3>\
+                                <button class='btn btn-danger suicide'>&#10005;</button>\
                             </div>\
+                            <input type='text' id='inputSearchMovies' class='form-control' placeholder='Type the movie your searching for here'>\
                             <br>\
                             <button id='btnSearchMovies' class='btn mb-3'>Search your movie</button>\
                             <br>\
@@ -103,7 +121,10 @@ var widgetSearchMovies = "<div id='containerWidgetSearchMovies' class='widget'>\
                         <hr>\
                         </div>";
 var widgetLoveCalc = "  <div id='containerWidgetLoveCalc' class='widget'>\
-                            <h3>&#10084; Love Calculator &#10084;</h3>\
+                            <div class=widgetTitle>\
+                                <h3>&#10084; Love Calculator &#10084;</h3>\
+                                <button class='btn btn-danger suicide'>&#10005;</button>\
+                            </div>\
                             <input id=fname class='form-control' placeholder='Type the first person'><br><br>\
                             <input id=sname class='form-control' placeholder='Type the second person'><br><br>\
                             <button id=getLove class='btn'>Get the percentage of love between these two people</button>\

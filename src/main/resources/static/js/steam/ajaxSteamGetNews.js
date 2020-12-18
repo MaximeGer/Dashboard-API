@@ -1,17 +1,18 @@
 $("body").on("click","#getNews", function(){
+    self = $(this).parent()
     $.ajax({
-        url: "/api/steam/getNews/" + $("#selectGame").val(),
+        url: "/api/steam/getNews/" + self.find("#selectGame").val(),
         method: 'GET',
         contentType:'application/json',
         success: function(result){
-            $("#widgetSteamNews").html(result);
+            self.find("#widgetSteamNews").html(result);
             newsitems = result["appnews"]["newsitems"];
             length = newsitems.length;
-            $("#widgetSteamNews").html("");
+            self.find("#widgetSteamNews").html("");
             for (var i=1; i<=5; i++) {
-                $("#widgetSteamNews").append("<div class='steamNews'>"+ newsitems[length-i]["contents"]+"</div><hr>");
+                self.find("#widgetSteamNews").append("<div class='steamNews'>"+ newsitems[length-i]["contents"]+"</div><hr>");
             }
-            $("#widgetSteamNews").find("img").attr("class","img-fluid img-thumbnail")
+            self.find("#widgetSteamNews").find("img").attr("class","img-fluid img-thumbnail")
         },
         error: function(error){
             console.error("Error : " +error.responseJSON.error + ", status : "+ error.responseJSON.status)
