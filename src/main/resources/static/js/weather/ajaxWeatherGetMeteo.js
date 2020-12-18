@@ -1,4 +1,5 @@
-$("#getCity").click(function(){
+
+$("body").on("click","#getCity", function(){
     $.ajax({
         url: "/weather/city/" + $("#selectCity").val(),
         methode: 'GET',
@@ -16,4 +17,29 @@ $("#getCity").click(function(){
             console.log(error.HEADERS_RECEIVED)
         }
     });
+});
+$("document").ready(function(){
+    setInterval(function(){
+        rowCount = $("#cityBody tr").length;
+        console.log(rowCount);
+        for ( i = 0; i < rowCount; i++) {
+            cityName = document.querySelector("#cityBody").children[i].children[0].innerHTML;
+            $.ajax({
+                url: "/weather/city/" + cityName,
+                methode: 'GET',
+                async: false,
+                contentType: 'application/json',
+                success: function(result){
+                    document.querySelector("#cityBody").children[i].children[1].innerHTML = (result["main"]["temp"]) - 273.15;
+                    document.querySelector("#cityBody").children[i].children[1].innerHTML = result["weather"]["0"]["description"];
+                },
+                error: function(error){
+                    console.log("error");
+                    console.log(error.HEADERS_RECEIVED)
+                }
+            });
+
+
+        }
+    }, 5000);
 });

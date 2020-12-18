@@ -1,4 +1,4 @@
-$("#getNews").click(function(){
+$("body").on("click","#getNews", function(){
     $.ajax({
         url: "/api/steam/getNews/" + $("#selectGame").val(),
         method: 'GET',

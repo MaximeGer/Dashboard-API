@@ -35,12 +35,16 @@
                     <li><a data-toggle="tab" href="#steamPanel">Steam</a></li>
                     <li><a data-toggle="tab" href="#moviesPanel">Movies</a></li>
                     <li><a data-toggle="tab" href="#lovePanel">Love Calculator</a></li>
+                    <li><a data-toggle="tab" href="#addPanel">Add your services to the Dashboard here</a></li>
                     </ul>
                     <div class="tab-content">
 
                     <div id="home" class="tab-pane fade in active">
-                        <h3>Veuillez choisir un service</h3>
+                        <div id="dashboard">   
+                            <h3>Choose a widget in the list to display it here</h3>
+                        </div>
                     </div>
+
                     <div id="weather" class="tab-pane fade input-group mb-3">
                         <h3>Weather</h3>
                         <div class="weatherPanel-body">
@@ -64,7 +68,7 @@
                                                 <th>Description</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="cityBody">
                                         </tbody>
                                     </table>
                                 </div>
@@ -72,16 +76,17 @@
                         </div>
                     </div>
 
+                    
+
                     <div id="youtubePanel" class="tab-pane fade input-group mb-3">
                         <h3>Youtube</h3>
                         <div class="panel-body">
                             <ul class="nav nav-tabs">
-                                <li><a data-toggle="tab" href="#selectVideo">selectVideo</a></li>
-                                <li><a data-toggle="tab" href="#selectChannel">selectChannel</a></li>
-                                <li><a data-toggle="tab" href="#searchVideo">searchVideo</a></li>
+                                <li><a data-toggle="tab" href="#selectVideo">Select Video</a></li>
+                                <li><a data-toggle="tab" href="#selectChannel">Select Channel</a></li>
+                                <li><a data-toggle="tab" href="#searchVideo">Search Video</a></li>
                             </ul>
                             <br>
-
 
                             <div class="tab-content">
                                 <div id="selectVideo" class="tab-pane fade input-group mb-3">
@@ -105,10 +110,6 @@
                                         <p>Get the infos of the video you selected</p>
                                     </div>
                                 </div>
-                                <div id="searchVideo" class="tab-pane fade input-group mb-3">
-
-                                </div>
-
 
                                 <div id="selectChannel" class="tab-pane fade input-group mb-3">
                                     <div class="mb-3">
@@ -124,16 +125,27 @@
                                     <button id=getChannel class="btn mb-3">Search channel</button>
                                     <br>
                                     <div id=widgetChannelInfos>
-                                        <p>Get the last 3 videos of the channel you selected</p>
+                                        <p>Get the infos of the channel you selected</p>
                                     </div>
                                 </div>
+
+
+                                <div id="searchVideo" class="tab-pane fade input-group mb-3">
+                                    <input type="text" id="searchVideoInput" name="searchVideoInput" class="form-control" placeholder="Search video" aria-label="Search video" aria-describedby="basic-addon2">
+                                    <br>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" id="searchVideoButton" type="button">Button</button>
+                                    </div>
+                                    <br>
+                                    <div id=widgetSearchedVideoInfos>
+                                        <p>Search the video</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-
-
                     
-
                     <div id="steamPanel" class="tab-pane fade input-group mb-3">
                         <h3>Steam</h3>
                         <select name="selectGame" id="selectGame" class="selectpicker">
@@ -146,8 +158,6 @@
                         <div id=widgetSteamNews></div>
                     </div>
 
-            
-
                     <div id="moviesPanel" class="tab-pane fade input-group mb-3">
                         <h3>Movies</h3>
                         <div class="panel-body">
@@ -159,6 +169,7 @@
                             <div class="tab-content">
                                 <div id="moviesByPopularity" class="tab-pane fade input-group mb-3">
                                     <div class="mb-3">
+                                        <h3>Movies</h3>
                                         <span>Range: </span>
                                         <input type="date" id="bottom-date"><span> - </span>
                                         <input type="date" id="high-date"><br><br>
@@ -189,6 +200,61 @@
                         <div id=widgetLoveCalc></div>
                     </div>
 
+                    <div id="addPanel" class="tab-pane fade in">
+                        <br><br>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Weather</th>
+                                </tr>
+                                <tr>
+                                    <td>Get the weather of the city provided by you</td>
+                                    <td><button class="btn" id="addWidgetWeather">Add</button></td>
+                                </tr>
+                                <tr>
+                                    <th>Youtube</th>
+                                </tr>
+                                <tr>
+                                    <td>Get the informations of a video selected in the list provided</td>
+                                    <td><button class="btn" id="addWidgetVideoInfos">Add</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Get the informations of a channel selected in the list provided</td>
+                                    <td><button class="btn" id="addWidgetChannelInfos">Add</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Get the informations of a video you search</td>
+                                    <td><button class="btn" id="addWidgetSearchedVideoInfos">Add</button></td>
+                                </tr>
+                                <tr>
+                                    <th>Steam</th>
+                                </tr>
+                                <tr>
+                                    <td>Get the news of a game selected in the list provided</td>
+                                    <td><button class="btn" id="addWidgetSteamNews">Add</button></td>
+                                </tr>
+                                <tr>
+                                    <th>Movies</th>
+                                </tr>
+                                <tr>
+                                    <td>Get the top 5 popular movies in a range of time between two dates</td>
+                                    <td><button class="btn" id="addWidgetMoviesByPopularity">Add</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Get the informations of the movie you want</td>
+                                    <td><button class="btn" id="addWidgetSearchMovies">Add</button></td>
+                                </tr>
+                                <tr>
+                                    <th>Love Calculator</th>
+                                </tr>
+                                <tr>
+                                    <td>Get the percentage of chances between two people</td>
+                                    <td><button class="btn" id="addWidgetLoveCalc">Add</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
                 </div>
             </div>
             <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
@@ -198,9 +264,15 @@
     <script type="text/javascript" th:src="@{/js/steam/ajaxSteamGetNews.js}"></script>
     <script type="text/javascript" th:src="@{/js/youtube/getChannelInfo.js}"></script>
     <script type="text/javascript" th:src="@{/js/youtube/getVideoInfo.js}"></script>
+    <script type="text/javascript" th:src="@{/js/youtube/searchVideo.js}"></script>
     <script type="text/javascript" th:src="@{/js/movies/ajaxMovies.js}"></script>
     <script type="text/javascript" th:src="@{/js/LoveCalculator/ajaxLoveGetPercentage.js}"></script>
     <script type="text/javascript" th:src="@{/js/weather/ajaxWeatherGetMeteo.js}"></script>
+    <script type="text/javascript" th:src="@{/js/dashboard/dashboard.js}"></script>
+    <script type="text/javascript" th:src="@{/js/dashboard/widgets.js}"></script>
+
+
+
 </div>
 </body>
 </html>

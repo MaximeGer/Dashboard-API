@@ -1,4 +1,4 @@
-$("#getVideo").click(function(){
+$("body").on("click","#getVideo", function(){
     $.ajax({
         url: "/api/youtube/getVideo/" + $("#selectedVideo").val(),
         method: 'GET',
@@ -7,9 +7,9 @@ $("#getVideo").click(function(){
             video = result.items[0];
             $("#widgetVideoInfos").html("");
             $("#widgetVideoInfos").append("<div id='youtubeVideo'>");
-            $("#widgetVideoInfos").append("<h1 id='Title'><a href=https://youtu.be/"+$("#selectedVideo").val()+">"+video.snippet.title +"</a></h1>");
+            $("#widgetVideoInfos").append("<h1 id='Title'>"+video.snippet.title +"</h1>");
             $("#widgetVideoInfos").append("<br><a href=https://www.youtube.com/channel/"+video.snippet.channelId+">"+video.snippet.channelTitle+"</h5><hr>");
-            $("#widgetVideoInfos").append("<img id='imgVideo' class='img-fluid img-thumbnail' width='"+video.snippet.thumbnails.high.width + "' height='"+video.snippet.thumbnails.high.height + "' src='" + video.snippet.thumbnails.high.url + "'></div>");
+            $("#widgetVideoInfos").append(video.player.embedHtml);
             $("#widgetVideoInfos").append("<br><br><p>Description :<br><br>"+video.snippet.description+"</p></div>");
 
         },
