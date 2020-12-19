@@ -39,10 +39,7 @@
 
                     <div id="home" class="tab-pane fade in active">
                         <h3>Choose a widget in the list to display it here</h3>
-                        <script th:inline="javascript">
-                            console.log( /*[[${user.getEmail()}]]*/)
-                        </script>
-                        <div id="dashboard">   
+                        <div id="dashboard" th:utext=${user.dashboard}>   
                         </div>
                     </div>
 
