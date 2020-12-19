@@ -2,9 +2,7 @@ $("body").on("click","#logout", function(){
     $.ajax({
         url: "/saveDashboard",
         method: 'PUT',
-        data: JSON.stringify({
-            "dashboard": $("#dashboard").html(),
-        }),
+        data: $("#dashboard").html(),
         contentType:'application/json',
         success: function(result){
             console.log(result)
