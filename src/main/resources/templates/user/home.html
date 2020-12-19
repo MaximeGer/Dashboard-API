@@ -16,11 +16,9 @@
 <body>
 <div class="container">
 
-    <form th:action="@{/logout}" method="get">
-        <button class="btn btn-md btn-danger btn-block" name="registration"
-                type="Submit">Logout
-        </button>
-    </form>
+    <button id="logout" class="btn btn-md btn-danger btn-block" name="registration"
+            type="Submit">Logout
+    </button>
 
     <div class="panel-group" style="margin-top:40px">
         <div class="panel panel-primary">
@@ -270,7 +268,7 @@
     <script type="text/javascript" th:src="@{/js/weather/ajaxWeatherGetMeteo.js}"></script>
     <script type="text/javascript" th:src="@{/js/dashboard/dashboard.js}"></script>
     <script type="text/javascript" th:src="@{/js/dashboard/widgets.js}"></script>
-
+    <script type="text/javascript" th:src="@{/js/users/saveDashboard.js}"></script>
 
 
 </div>
