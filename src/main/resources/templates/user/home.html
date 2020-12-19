@@ -16,11 +16,9 @@
 <body>
 <div class="container">
 
-    <form th:action="@{/logout}" method="get">
-        <button class="btn btn-md btn-danger btn-block" name="registration"
-                type="Submit">Logout
-        </button>
-    </form>
+    <button id="logout" class="btn btn-md btn-danger btn-block" name="registration"
+            type="Submit">Logout
+    </button>
 
     <div class="panel-group" style="margin-top:40px">
         <div class="panel panel-primary">
@@ -41,7 +39,7 @@
 
                     <div id="home" class="tab-pane fade in active">
                         <h3>Choose a widget in the list to display it here</h3>
-                        <div id="dashboard">   
+                        <div id="dashboard" th:utext=${user.dashboard}>   
                         </div>
                     </div>
 
@@ -287,7 +285,7 @@
     <script type="text/javascript" th:src="@{/js/dashboard/dashboard.js}"></script>
     <script type="text/javascript" th:src="@{/js/dashboard/widgets.js}"></script>
     <script type="text/javascript" th:src="@{/js/weather/ajaxForecastWeather.js}"></script>
-
+    <script type="text/javascript" th:src="@{/js/users/saveDashboard.js}"></script>
 
 
 </div>
