@@ -50,13 +50,14 @@
                         <div class="weatherPanel-body">
                             <ul class="nav nav-tabs">
                                 <li><a data-toggle="tab" href="#cityWeather">city weather</a></li>
-                                <!-- <li><a data-toggle="tab" href="#selectChannel">selectChannel</a></li>
-                                <li><a data-toggle="tab" href="#searchVideo">searchVideo</a></li> -->
+                                <li><a data-toggle="tab" href="#forecast">forecast</a></li>
+                                <!-- <li><a data-toggle="tab" href="#searchVideo">searchVideo</a></li> -->
                             </ul>
                             <br>
                             <div class="tab-content">
                                 <div id="cityWeather" class="tab-pane fade input-group mb-3">
                                     <div>
+                                        <label for="selectCity">City :</label>
                                         <input type="text" name="selectCity" id="selectCity">
                                         <button id="getCity" class="btn">get the weather of your city</button>
                                     </div>
@@ -71,6 +72,21 @@
                                         <tbody id="cityBody">
                                         </tbody>
                                     </table>
+                                </div>
+                                <div id="forecast" class="tab-pane fade input-group mb-3">
+                                    <div>
+                                        <label for="selectCityForecast">City :</label>
+                                        <input type="text" name="selectCityForecast" id="selectCityForecast">
+                                        <select name="forecastInterval" id="forecastInterval">
+                                            <option value="hourly">hourly</option>
+                                            <option value="daily">daily</option>
+                                        </select>
+                                        <button id="getCityForecast" class="btn">get the weather forecast of your city</button>
+                                        <div id="bob">
+    
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -270,6 +286,7 @@
     <script type="text/javascript" th:src="@{/js/weather/ajaxWeatherGetMeteo.js}"></script>
     <script type="text/javascript" th:src="@{/js/dashboard/dashboard.js}"></script>
     <script type="text/javascript" th:src="@{/js/dashboard/widgets.js}"></script>
+    <script type="text/javascript" th:src="@{/js/weather/ajaxForecastWeather.js}"></script>
 
 
 
