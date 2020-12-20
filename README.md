@@ -149,12 +149,12 @@ When calling :
 ##### Weather
 When calling :
 - GET ***application-url/weather/city/{cityname}*** (eg. Nantes)
-    - See [get weather by city api](URL ICI WEATHER)
+    - See [get weather by city api](https://openweathermap.org/current)
     - Values and display are handled in the [ajaxWeatherGetMeteo.js](src/main/resources/static/js/weather/ajaxWeatherGetMeteo.js) file 
    
     
 - GET ***application-url/forcastweather/city/getCityForecast?lat=11&lon=11***
-    - See [get weather hourly or daily api](URL ICI WEATHER FREE)
+    - See [get weather hourly or daily api](https://openweathermap.org/api/one-call-api)
     - Values and display are handled in the [ajaxForecastWeather.js](src/main/resources/static/js/weather/ajaxForecastWeather.js) file 
      
     
