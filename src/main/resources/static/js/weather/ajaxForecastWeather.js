@@ -31,9 +31,9 @@ $("body").on("click","#getCityForecast", function(){
             tempHourly      = ((result ["hourly"][0]["temp"]) - 273.15).toFixed(2);
             capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1);
             if(self.find("#forecastInterval").val() == "daily"){
-                self.find("#bob").append("<p>Il fera au plus haut " + tempDailyMax + " et au plus bas " + tempDailyMin + " à " + capitalizedCity + ". </p>");
+                self.find("#bob").append("<p>The temperature will be at its highest " + tempDailyMax + "°C and at the lowest " + tempDailyMin + "°C in " + capitalizedCity + ". </p>");
             } else {
-                self.find("#bob").append("<p>Il fera " + tempHourly + " à " + capitalizedCity + ". </p>");
+                self.find("#bob").append("<p>In the next hour he will do " + tempHourly + "°C in " + capitalizedCity + ". </p>");
             }
         },
         error: function(error){
