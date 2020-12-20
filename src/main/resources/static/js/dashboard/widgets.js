@@ -19,28 +19,23 @@ var widgetWeather = "<div id='containerWidgetWeather' class='widget' draggable=t
                         </table>\
                     </hr>\
                     <div>";
-
-<<<<<<< HEAD
-var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
-=======
 var widgetForecastWeather = "<div id='containerForecastWidgetWeather' class='widget'>\
                                 <div class=widgetTitle>\
                                 <h3>Weather</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\
                                 </div>\
-                                        <label for=selectCityForecast>City :</label>\
-                                        <input type=text name=selectCityForecast id=selectCityForecast>\
-                                        <select name=forecastInterval id=forecastInterval>\
-                                            <option value=hourly>hourly</option>\
-                                            <option value=daily>daily</option>\
-                                        </select>\
-                                        <button id=getCityForecast class=btn>get the weather forecast of your city</button>\
-                                        <div id=bob>\
-                                        </div>\
+                                <label for=selectCityForecast>City :</label>\
+                                <input type=text name=selectCityForecast id=selectCityForecast>\
+                                <select name=forecastInterval id=forecastInterval>\
+                                    <option value=hourly>hourly</option>\
+                                    <option value=daily>daily</option>\
+                                </select>\
+                                <button id=getCityForecast class=btn>get the weather forecast of your city</button>\
+                                <div id=bob>\
+                                </div>\
                             </div>";
 
-var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget'>\
->>>>>>> meteo2
+var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                             <div class=widgetTitle>\
                                 <h3>Youtube</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\
