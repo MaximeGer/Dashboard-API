@@ -59,7 +59,44 @@ To do this, you need to implement a web application that works like [Netvibes](h
 
 ##### [Ressources](src/main/resources) :
 
-application.properties
+- [application.properties](src/main/resources/application.properties)
+    Sets the properties 
+- [templates/](src/main/resources/templates)
+    Contains html files  
+- [static/css](src/main/resources/static/css)
+    Contains style files
+- [static/js](src/main/resources/static/js)
+    Contains javascript files
+    
+##### [Java](src/main/java/com/epitech/dashboard) :
+
+- [DashboardApplication.java](src/main/java/com/epitech/dashboard/DashboardApplication.java)
+    Is the entry point of the application 
+- [about](src/main/java/com/epitech/dashboard/about)
+    Contains the class that help to create the *about.json* file
+- [configuration](src/main/java/com/epitech/dashboard/configuration)
+    Contains the file for the web security configuration
+- [controller](src/main/java/com/epitech/dashboard/controller)
+    Contains all the controllers of the APIs
+- [model](src/main/java/com/epitech/dashboard/model)
+    Contains the models for the authentication 
+- [repository](src/main/java/com/epitech/dashboard/repository)
+    Contains the repositories for the authentication 
+- [service](src/main/java/com/epitech/dashboard/service)
+    Contains the services for the authentication 
+
+##### Other :
+
+- [createDatabase.sql](SQL/createDatabase.sql) 
+    File to run to create the database in mysql
+- [build.gradle](build.gradle)
+    Defines the gradle dependencies
+    
+#### APIs : 
+  
+##### About 
+
+
 
 
 
