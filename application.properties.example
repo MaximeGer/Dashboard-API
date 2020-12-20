@@ -35,3 +35,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 spring.datasource.initialization-mode=always
 
 #logging.level.org.springframework.security=DEBUG
+
+
+spring.security.oauth2.client.registration.google.client-id=213526734556-p4puemo8tc35td5n62gqi0t7puc7991m.apps.googleusercontent.com
+spring.security.oauth2.client.registration.google.client-secret=AJNzcHAdFtBDMe8rLirjxCgA

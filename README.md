@@ -24,7 +24,7 @@ To do this, you need to implement a web application that works like [Netvibes](h
 
 ##### Tomcat
 
-1. Copy [dashboard-0.0.1-SNAPSHOT.war](build/libs/dashboard-0.0.1-SNAPSHOT.war) (in the build/libs/ folder) into the webapps folder of tomcat
+1. Copy [build/libs/dashboard-0.0.1-SNAPSHOT.war](build/libs/dashboard-0.0.1-SNAPSHOT.war) (in the build/libs/ folder) into the webapps folder of tomcat
 2. From a terminal navigate to tomcat/bin folder and execute
     - ***catalina.bat run*** (on Windows)
     - ***catalina.sh run*** (on Unix-based systems)
