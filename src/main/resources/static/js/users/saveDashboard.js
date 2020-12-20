@@ -5,7 +5,6 @@ $("body").on("click","#logout", function(){
         data: $("#dashboard").html(),
         contentType:'application/json',
         success: function(result){
-            console.log(result)
             window.location.href ="/logout"
         },
         error: function(error){

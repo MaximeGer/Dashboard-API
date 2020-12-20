@@ -2,7 +2,6 @@ var i = 1;
 
 $("body").on("click", "#addWidgetWeather", function (){
     $("#dashboard").append(widgetWeather)
-    console.log($(".widget").last())
     $(".widget").last().attr("id", i)
     $(".widget").children().attr("draggable", "false")
     i = i+1;

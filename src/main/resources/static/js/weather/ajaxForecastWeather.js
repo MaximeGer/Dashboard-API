@@ -1,6 +1,5 @@
 $("body").on("click","#getCityForecast", function(){
     self = $(this).parent();
-    console.log("bob");
     lat = "";
     lon = "";
     city = self.find("#selectCityForecast").val();

@@ -5,7 +5,6 @@ function ajaxShowMovies(url, widget) {
         contentType:'application/json',
         success: function(result){
             $(widget).html("");
-            console.log(result)
             movieItems = result["results"];
             if(movieItems[0] === undefined && widget == "#widgetMoviesByPopularity"){
                 $(widget).html("<p style='color: red'>These are not valid dates, recheck what you wrote</p>");
