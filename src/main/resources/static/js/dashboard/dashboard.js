@@ -8,6 +8,10 @@ $("body").on("click", "#addWidgetWeather", function (){
     i = i+1;
 });
 
+$("body").on("click", "#addWidgetForecastWeather", function (){
+    $("#dashboard").append(widgetForecastWeather)
+});
+
 
 $("body").on("click","#addWidgetVideoInfos",function (){
     $("#dashboard").append(widgetVideoInfos)

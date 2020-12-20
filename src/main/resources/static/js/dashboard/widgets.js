@@ -3,6 +3,7 @@ var widgetWeather = "<div id='containerWidgetWeather' class='widget' draggable=t
                             <h3>Weather</h3>\
                             <button class='btn btn-danger suicide'>&#10005;</button>\
                         </div>\
+                        <label for=selectCity>City :</label>\
                         <input type='text' name='selectCity' id='selectCity'>\
                         <button id='getCity' class='btn'>get the weather of your city</button>\
                         <table id='widgetWeather' class='table table-striped'>\
@@ -19,7 +20,27 @@ var widgetWeather = "<div id='containerWidgetWeather' class='widget' draggable=t
                     </hr>\
                     <div>";
 
+<<<<<<< HEAD
 var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
+=======
+var widgetForecastWeather = "<div id='containerForecastWidgetWeather' class='widget'>\
+                                <div class=widgetTitle>\
+                                <h3>Weather</h3>\
+                                <button class='btn btn-danger suicide'>&#10005;</button>\
+                                </div>\
+                                        <label for=selectCityForecast>City :</label>\
+                                        <input type=text name=selectCityForecast id=selectCityForecast>\
+                                        <select name=forecastInterval id=forecastInterval>\
+                                            <option value=hourly>hourly</option>\
+                                            <option value=daily>daily</option>\
+                                        </select>\
+                                        <button id=getCityForecast class=btn>get the weather forecast of your city</button>\
+                                        <div id=bob>\
+                                        </div>\
+                            </div>";
+
+var widgetVideoInfos = "<div id='containerWidgetVideoInfos' class='widget'>\
+>>>>>>> meteo2
                             <div class=widgetTitle>\
                                 <h3>Youtube</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\
