@@ -95,7 +95,86 @@ To do this, you need to implement a web application that works like [Netvibes](h
 #### APIs : 
   
 ##### About 
+When calling :
+- GET ***application-url/about.json***
+    Get information about the APIs in a json file
+    
 
+##### Login
+When calling :
+- GET ***application-url/login***
+    Set the login page of the application
+
+- POST ***application-url/login?user_name=user_name&password=password***
+    Login into the application if the credentials are in accordance with the values in the database
+
+- GET ***application-url/registration***
+    Set the registration page of the application
+    
+- POST ***application-url/registration***
+    Register an user with the given params in the *x-www-form-urlencoded* type
+    
+- GET ***application-url/user/home***
+    Set the home page of the application for an user
+
+- GET ***application-url/admin/home***
+    Set the home page of the application for an admin
+    
+##### LoveCalculator
+When calling :
+- GET ***application-url/api/loveCalculator?fname=fname&sname=sname***
+    - See [love calculator api](URL ICI LOVE CALCULATOR)
+    - Values and display are handled in the [ajaxLoveGetPercentage.js](src/main/resources/static/js/LoveCalculator/ajaxLoveGetPercentage.js) file 
+        
+##### Movies
+When calling :
+- GET ***application-url/api/movies/getByPopularity?bottom-date=ICI&high-date=ICIAUSSI***
+    - See [get most popular movies api](URL ICI Movies Popular)
+    - Values and display are handled in the [ajaxMovies.js](src/main/resources/static/js/movies/ajaxMovies.js) file 
+      
+        
+##### Steam
+When calling :
+- GET ***application-url/api/steam/getNews/{steamGameId}*** (eg. 1091500)
+    - See [get steam game api](URL ICI STEAM)
+    - Values and display are handled in the [ajaxSteamGetNews.js](src/main/resources/static/js/steam/ajaxSteamGetNews.js) file 
+
+
+##### User
+When calling :
+- PUT ***application-url/saveDashboard***
+    SI TU PEUX DEFINIR CE QUE CA FAIT ICI MAXIME STP :)
+
+
+##### Weather
+When calling :
+- GET ***application-url/weather/city/{cityname}*** (eg. Nantes)
+    - See [get weather by city api](URL ICI WEATHER)
+    - Values and display are handled in the [ajaxWeatherGetMeteo.js](src/main/resources/static/js/weather/ajaxWeatherGetMeteo.js) file 
+   
+    
+- GET ***application-url/forcastweather/city/getCityForecast?lat=11&lon=11***
+    - See [get weather hourly or daily api](URL ICI WEATHER FREE)
+    - Values and display are handled in the [ajaxForecastWeather.js](src/main/resources/static/js/weather/ajaxForecastWeather.js) file 
+     
+    
+##### Youtube
+When calling :
+- GET ***application-url/api/youtube/getVideo/{youtubeVideoId}*** (eg. oPc4z_wUKsM)
+    - See [video youtube api](https://developers.google.com/youtube/v3/docs/videos/list)
+    - Values and display are handled in the [getVideoInfo.js](src/main/resources/static/js/youtube/getVideoInfo.js) file 
+    
+- GET ***application-url/api/youtube/getChannel/{youtubeChannelId}*** (eg. UCxo56gzJQ_fhb6svPqTSewg)
+    - See [channel youtube api](https://developers.google.com/youtube/v3/docs/channels/list)
+    - Values and display are handled in the [getChannelInfo.js](src/main/resources/static/js/youtube/getChannelInfo.js) file 
+
+- GET ***application-url/api/youtube/searchVideo/{searchString}*** (eg. poulet)
+    - See [channel youtube api](https://developers.google.com/youtube/v3/docs/search/list)
+    - Values and display are handled in the [searchVideo.js](src/main/resources/static/js/youtube/searchVideo.js) file 
+
+
+
+    
 
 
 

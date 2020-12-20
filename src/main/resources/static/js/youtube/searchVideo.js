@@ -1,6 +1,5 @@
 $("body").on("click","#searchVideoButton", function(){
     self = $(this).parent().parent();
-    console.log(self)
     if(self.find("#searchVideoInput").val().length > 0){
         $.ajax({
             url: "/api/youtube/searchVideo/" + self.find("#searchVideoInput").val(),

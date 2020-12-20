@@ -1,4 +1,3 @@
-
 $("body").on("click","#getCityForecast", function(){
     self = $(this).parent();
     console.log("bob");

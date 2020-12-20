@@ -1,7 +1,5 @@
 $("body").on("click","#getVideo", function(){
     self = $(this).parent();
-    console.log(self.find("#selectedVideo"))    
-    console.log(self.find("#selectedVideo").val())
     $.ajax({
         url: "/api/youtube/getVideo/" + self.find("#selectedVideo").val(),
         method: 'GET',

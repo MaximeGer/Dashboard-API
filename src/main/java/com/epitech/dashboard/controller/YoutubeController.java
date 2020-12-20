@@ -33,7 +33,7 @@ public class YoutubeController {
     public String getChannel(@PathVariable("id") String id) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://youtube.googleapis.com/youtube/v3/channels/?part=snippet&part=statistics&part=contentDetails&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&id=" + id))
+                .uri(URI.create("/?part=snippet&part=statistics&part=contentDetails&key=AIzaSyA_Bc3Jc0lMum41sD7reTC6zjocxbC3Jh0&id=" + id))
                 .build();
         HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
