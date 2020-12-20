@@ -123,20 +123,20 @@ When calling :
 ##### LoveCalculator
 When calling :
 - GET ***application-url/api/loveCalculator?fname=fname&sname=sname***
-    - See [love calculator api](URL ICI LOVE CALCULATOR)
+    - See [love calculator api](https://rapidapi.com/ajith/api/love-calculator)
     - Values and display are handled in the [ajaxLoveGetPercentage.js](src/main/resources/static/js/LoveCalculator/ajaxLoveGetPercentage.js) file 
         
 ##### Movies
 When calling :
 - GET ***application-url/api/movies/getByPopularity?bottom-date=2000-02-07&high-date=2000-11-30***
-    - See [get most popular movies api](URL ICI Movies Popular)
+    - See [get most popular movies api](https://developers.themoviedb.org/3/getting-started/popularity)
     - Values and display are handled in the [ajaxMovies.js](src/main/resources/static/js/movies/ajaxMovies.js) file 
       
         
 ##### Steam
 When calling :
 - GET ***application-url/api/steam/getNews/{steamGameId}*** (eg. 1091500)
-    - See [get steam game api](URL ICI STEAM)
+    - See [get steam game api](https://developer.valvesoftware.com/wiki/Steam_Web_API)
     - Values and display are handled in the [ajaxSteamGetNews.js](src/main/resources/static/js/steam/ajaxSteamGetNews.js) file 
 
 
