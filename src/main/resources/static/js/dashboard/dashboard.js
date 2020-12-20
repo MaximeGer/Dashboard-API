@@ -2,6 +2,10 @@ $("body").on("click", "#addWidgetWeather", function (){
     $("#dashboard").append(widgetWeather)
 });
 
+$("body").on("click", "#addWidgetForecastWeather", function (){
+    $("#dashboard").append(widgetForecastWeather)
+});
+
 
 $("body").on("click","#addWidgetVideoInfos",function (){
     $("#dashboard").append(widgetVideoInfos)
