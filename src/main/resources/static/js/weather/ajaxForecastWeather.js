@@ -33,7 +33,7 @@ $("body").on("click","#getCityForecast", function(){
             if(self.find("#forecastInterval").val() == "daily"){
                 self.find("#bob").append("<p>The temperature will be at its highest " + tempDailyMax + "°C and at the lowest " + tempDailyMin + "°C in " + capitalizedCity + ". </p>");
             } else {
-                self.find("#bob").append("<p>In the next hour he will do " + tempHourly + "°C in " + capitalizedCity + ". </p>");
+                self.find("#bob").append("<p>In the next hour it will be " + tempHourly + "°C in " + capitalizedCity + ". </p>");
             }
         },
         error: function(error){
