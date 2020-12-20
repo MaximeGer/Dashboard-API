@@ -16,19 +16,20 @@ To do this, you need to implement a web application that works like [Netvibes](h
     - Rename it into *application.properties*
     - Change the database credentials with your own (l.8 : username & l.9 : password)
 
-##### IntellJ Idea
+##### IntelliJ Idea
 
-1. Build the project in a new  intellj project
+1. Build the project in a new  intellij project
 2. Run [DashboardApplication.java](src/main/java/com/epitech/dashboard/DashboardApplication.java)
 3. Go to [http://localhost:8080](http://localhost:8080)
 
 ##### Tomcat
 
-1. Copy [build/libs/dashboard-0.0.1-SNAPSHOT.war](build/libs/dashboard-0.0.1-SNAPSHOT.war) (in the build/libs/ folder) into the webapps folder of tomcat
-2. From a terminal navigate to tomcat/bin folder and execute
+1. Run ***./gradlew build*** 
+2. Copy [build/libs/dashboard-0.0.1-SNAPSHOT.war](build/libs/dashboard-0.0.1-SNAPSHOT.war) (in the build/libs/ folder) into the webapps folder of tomcat
+3. From a terminal navigate to tomcat/bin folder and execute
     - ***catalina.bat run*** (on Windows)
     - ***catalina.sh run*** (on Unix-based systems)
-3. Go to [http://localhost:8080/dashboard-0.0.1-SNAPSHOT](http://localhost:8080/dashboard-0.0.1-SNAPSHOT/)
+4. Go to [http://localhost:8080/dashboard-0.0.1-SNAPSHOT](http://localhost:8080/dashboard-0.0.1-SNAPSHOT/)
 
 
 #### Services & widgets :
