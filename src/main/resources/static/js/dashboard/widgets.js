@@ -19,7 +19,7 @@ var widgetWeather = "<div id='containerWidgetWeather' class='widget' draggable=t
                         </table>\
                     </hr>\
                     <div>";
-var widgetForecastWeather = "<div id='containerForecastWidgetWeather' class='widget'>\
+var widgetForecastWeather = "<div id='containerForecastWidgetWeather' class='widget' draggable=true ondragstart='drag(event)' ondragover='allowDrop(event)' ondrop='drop(event)'>\
                                 <div class=widgetTitle>\
                                 <h3>Weather</h3>\
                                 <button class='btn btn-danger suicide'>&#10005;</button>\

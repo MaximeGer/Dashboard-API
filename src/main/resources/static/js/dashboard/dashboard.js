@@ -10,6 +10,9 @@ $("body").on("click", "#addWidgetWeather", function (){
 
 $("body").on("click", "#addWidgetForecastWeather", function (){
     $("#dashboard").append(widgetForecastWeather)
+    $(".widget").last().attr("id", i)
+    $(".widget").children().attr("draggable", "false")
+    i = i+1;
 });
 
 
