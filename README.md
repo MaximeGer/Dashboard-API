@@ -128,7 +128,7 @@ When calling :
         
 ##### Movies
 When calling :
-- GET ***application-url/api/movies/getByPopularity?bottom-date=ICI&high-date=ICIAUSSI***
+- GET ***application-url/api/movies/getByPopularity?bottom-date=2000-02-07&high-date=2000-11-30***
     - See [get most popular movies api](URL ICI Movies Popular)
     - Values and display are handled in the [ajaxMovies.js](src/main/resources/static/js/movies/ajaxMovies.js) file 
       
@@ -143,7 +143,7 @@ When calling :
 ##### User
 When calling :
 - PUT ***application-url/saveDashboard***
-    SI TU PEUX DEFINIR CE QUE CA FAIT ICI MAXIME STP :)
+    - Register the dashboard in the database
 
 
 ##### Weather

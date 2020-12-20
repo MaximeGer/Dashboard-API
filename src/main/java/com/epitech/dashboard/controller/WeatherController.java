@@ -23,10 +23,8 @@ public class WeatherController {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&appid=525fed8a65a821cff57c8062da27fd8a"))
                 .build();
-
         HttpResponse<String> response = client.send(request,
                 HttpResponse.BodyHandlers.ofString());
-
         return response.body();
     }
 
