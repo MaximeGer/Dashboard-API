@@ -50,6 +50,7 @@ public class LoginController {
                             "There is already a user registered with the user name provided");
         }
         if (bindingResult.hasErrors()) {
+            System.out.println("ha");
             modelAndView.setViewName("auth/registration");
         } else {
             userService.saveUser(user);

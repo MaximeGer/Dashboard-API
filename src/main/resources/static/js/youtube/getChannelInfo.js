@@ -1,5 +1,6 @@
 $("body").on("click","#getChannel", function(){
     self = $(this).parent();
+    console.log( "/api/youtube/getChannel/" + self.find("#selectedChannel").val())
     $.ajax({
         url: "/api/youtube/getChannel/" + self.find("#selectedChannel").val(),
         method: 'GET',

@@ -35,7 +35,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (8);
+INSERT INTO `hibernate_sequence` VALUES (10);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +84,6 @@ CREATE TABLE `user_role` (
 
 LOCK TABLES `user_role` WRITE;
 /*!40000 ALTER TABLE `user_role` DISABLE KEYS */;
-INSERT INTO `user_role` VALUES (3,1),(5,1),(6,1),(7,1);
 /*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +102,7 @@ CREATE TABLE `users` (
   `name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
   `active` tinyint DEFAULT NULL,
-  `dashboard` varchar(20000) DEFAULT NULL,
+  `dashboard` blob,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -114,7 +113,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'bibii','bibi@bibi.com','$2a$10$JgOagLBqim/G2gcE6An8AeRQenT48At5nwdQ0LGz34vU1x1ZUjuE6','bibi','bibi',1,'   \n                        <div id=\"0\" class=\"widget\" draggable=\"true\" ondragstart=\"drag(event)\" ondragover=\"allowDrop(event)\" ondrop=\"drop(event)\">                        <div class=\"widgetTitle\" draggable=\"false\">                            <h3>Weather</h3>                            <button class=\"btn btn-danger suicide\">✕</button>                        </div>                        <input type=\"text\" name=\"selectCity\" id=\"selectCity\" draggable=\"false\">                        <button id=\"getCity\" class=\"btn\" draggable=\"false\">get the weather of your city</button>                        <table id=\"widgetWeather\" class=\"table table-striped\" draggable=\"false\">                            <thead>                                <tr>                                    <th>City</th>                                    <th>Temperature</th>                                    <th>Description</th>                                </tr>                            </thead>                            <tbody>                               </tbody>                        </table>                                        <div draggable=\"false\"></div></div>'),(3,'azerty','azerty@azerty.com','$2a$10$BqaTaXDdJSShqflJJDZeuOAMos1jZJUK2sQiTES..tc4OKH4Q10nu','azerty','azerty',1,NULL),(5,'blolb','blolb@blolb.com','$2a$10$U.M0WSJqvJPQLlOf26b/PujJ8u2VUVDcSmcDfLp.njQQ.iadrUPjy','blolb','blolb',1,NULL),(6,'bastien','bastien@bastien.com','$2a$10$2s7FMGU3rtF4Ch8hg6cvgeHIKfSdRfSL7mQppfr9TTIm1VVzZFsB.','bastien','bastien',1,NULL),(7,'vincent','vincent@vincent.com','$2a$10$kQOa6lLDtBq0paA721hrIecooQMsLh2H8.1uUJaBKbqM5YgXuZH0m','vincent','vincent',1,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -127,4 +125,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-20 13:01:37
+-- Dump completed on 2020-12-20 22:13:33
